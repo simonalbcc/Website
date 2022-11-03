@@ -1,0 +1,26 @@
+#leftCorner {
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+.text-uppercase{
+    font-size: 25px;
+    padding-left: 20px;
+    color:white;
+    font-family: "Century Gothic";
+}
+img {
+    max-width: 100%;
+}
+#logo {
+    width: 65px;
+    flex-basis: 40%;
+}
+
+ul.nav a:hover{
+    color:#808080;
+}
+
+body{
+    background-image:url("/src/main/webapp/images/bg.png");
+}
