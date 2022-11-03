@@ -6,6 +6,8 @@
     <title>Welcome</title>
 </head>
     <body>
-    Welcome =)
+        <div>
+            <img src = '<spring:url value="/images/welcomeBear.png"/>'/>
+        </div>
     </body>
 </html>
