@@ -1,0 +1,23 @@
+#contactBtn {
+    text-decoration: none;
+    color: black;
+    border: 1px solid black;
+    padding: 12px;
+    font-size: 13px;
+    background: transparent;
+    cursor: pointer;
+    border-radius: 16px;
+}
+
+.container-fluid{
+    margin-right: auto;
+    margin-left: auto;
+}
+
+#imgButton, body div div{
+    text-align: center;
+}
+
+body div div{
+    margin-top: 100px;
+}

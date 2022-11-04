@@ -9,7 +9,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,700;1,300;1,400&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href='<spring:url value="/css/styleTemplate.css"/>' type="text/css">
+        <link rel="stylesheet" href='<spring:url value="/css/template.css"/>' type="text/css">
     <body class = "mainContainer">
         <header>
             <nav>
@@ -18,15 +18,19 @@
                 <div class="nav-links">
                     <ul>
                         <li><a href="">MENU</a></li>
-                        <li><a href="">panier</a></li>
-                        <li><a href="">langue</a></li>
-                        <li><a href="">profile</a></li>
+                        <li><a href="">PANIER</a></li>
+                        <li><a href="">LANGUE</a></li>
+                        <li><a href="">PROFILE</a></li>
+                        <li><input type="text" placeholder="Rechercher.."></li>
                     </ul>
                 </div>
             </nav>
-        <div class = "text-box">
-            <img src='<spring:url value="/images/welcomeBear.png"/>'/>
-        </div>
+            <div id ="userBanner">
+                <p>Bonjour {user} </p>
+            </div>
+            <div id = "content">
+                <tiles:insertAttribute name="main-content"/>
+            </div>
         </header>
 
 
