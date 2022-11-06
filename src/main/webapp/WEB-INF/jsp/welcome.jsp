@@ -13,7 +13,7 @@
             <img class="" src='<spring:url value="/images/welcomeBear.png"/>'/>
         </div>
         <div id = "imgButton">
-            <button type="button" class="btn btn-light">A propos de nous</button>
+            <a class="btn btn-light" href='<spring:url value="/contact"/>'>A propos de nous</a>
         </div>
     </div>
     </body>

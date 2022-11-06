@@ -13,14 +13,14 @@
     <body class = "mainContainer">
         <header>
             <nav>
-                <a href="index.html"><img src='<spring:url value="/images/bearEating.png"/>'/></a>
+                <a href='<spring:url value="/welcome"/>'><img src='<spring:url value="/images/bearEating.png"/>'/></a>
                 <h1>La sandwicherie des ours</h1>
                 <div class="nav-links">
                     <ul>
-                        <li><a href="">MENU</a></li>
+                        <li><a href='<spring:url value="/menu"/>'>MENU</a></li>
                         <li><a href="">PANIER</a></li>
                         <li><a href="">LANGUE</a></li>
-                        <li><a href="">PROFILE</a></li>
+                        <li><a href="">PROFIL</a></li>
                         <li><input type="text" placeholder="Rechercher.."></li>
                     </ul>
                 </div>
