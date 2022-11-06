@@ -5,7 +5,6 @@
     <meta charset="utf-8">
     <title>Welcome</title>
     <link rel="stylesheet" href='<spring:url value="/css/welcome.css"/>' type="text/css">
-    <link rel="stylesheet" href='<spring:url value="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>' type="text/css">
 </head>
     <body>
     <div>
@@ -17,5 +16,5 @@
         </div>
     </div>
     </body>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+
 </html>

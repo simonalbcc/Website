@@ -9,10 +9,13 @@
 </head>
 <body>
     <div id = "menu">
-        <button> Pâtes </button>
+        <div>
+            <a class="btn btn-light" style="--bs-btn-padding-y: 1rem; --bs-btn-padding-x: 1rem; --bs-btn-font-size: 2rem;" href='<spring:url value="/contact"/>'>Pâtes</a>
+        </div>
         <img src='<spring:url value="/images/welcomeBear.png"/>'/>
-        <button> Sandwichs </button>
+        <div>
+            <a class="btn btn-light" style="--bs-btn-padding-y: 1rem; --bs-btn-padding-x: 1rem; --bs-btn-font-size: 2rem;" href='<spring:url value="/contact"/>'>Sandwichs</a>
+        </div>
     </div>
-
 </body>
 </html>

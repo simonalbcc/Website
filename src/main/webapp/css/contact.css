@@ -1,17 +1,13 @@
 #wrapperContact{
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
-
+    height: 90%;
 }
 #contact{
-    background-color: antiquewhite;
-    border: lightgray 3px solid;
+    background-color: papayawhip ;
+    border: antiquewhite 3px solid;
     width: 80%;
-    height: 80%;
-}
-button {
-    width: 200px;
-    height: 75px;
+    height: 50%;
 }
