@@ -19,9 +19,27 @@
                 <div class="nav-links">
                     <ul>
                         <li><a href='<spring:url value="/menu"/>'>MENU</a></li>
-                        <li><a href="">PANIER</a></li>
-                        <li><a href="">LANGUE</a></li>
-                        <li><a href="">PROFIL</a></li>
+                        <li><a href='<spring:url value="/panier"/>'>PANIER</a></li>
+
+                        <li class = "nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            LANGUES
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><button class="dropdown-item"> <img class ="flag" src='<spring:url value="/images/france.png"/>'/></button></li>
+                                <li><button class="dropdown-item"> <img class ="flag" src='<spring:url value="/images/united-kingdom.png"/>'/></button></li>
+                            </ul>
+                        </li>
+
+                        <li class = "nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                PROFILE
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><button class="btn btn-warning dropdown-item">CONNEXION</button></li>
+                            </ul>
+                        </li>
+
                         <li><input type="text" placeholder="Rechercher.."></li>
                     </ul>
                 </div>

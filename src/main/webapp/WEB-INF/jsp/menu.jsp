@@ -10,11 +10,11 @@
 <body>
     <div id = "menu">
         <div>
-            <a class="btn btn-light" style="--bs-btn-padding-y: 1rem; --bs-btn-padding-x: 1rem; --bs-btn-font-size: 2rem;" href='<spring:url value="/contact"/>'>Pâtes</a>
+            <a class="btn btn-light" style="--bs-btn-padding-y: 1rem; --bs-btn-padding-x: 1rem; --bs-btn-font-size: 2rem;" href='<spring:url value="/products"/>'>Pâtes</a>
         </div>
         <img src='<spring:url value="/images/welcomeBear.png"/>'/>
         <div>
-            <a class="btn btn-light" style="--bs-btn-padding-y: 1rem; --bs-btn-padding-x: 1rem; --bs-btn-font-size: 2rem;" href='<spring:url value="/contact"/>'>Sandwichs</a>
+            <a class="btn btn-light" style="--bs-btn-padding-y: 1rem; --bs-btn-padding-x: 1rem; --bs-btn-font-size: 2rem;" href='<spring:url value="/products"/>'>Sandwichs</a>
         </div>
     </div>
 </body>

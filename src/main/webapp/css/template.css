@@ -5,7 +5,6 @@
 }
 
 header{
-    min-height: 100vh;
     width: 100%;
     background-position: center;
     background-size: cover;
@@ -13,14 +12,15 @@ header{
 }
 
 nav{
+    height: 150px;
     display: flex;
     padding: 2% 6%;
     justify-content: space-between;
     align-items: center;
     background-color: orange;
 }
-nav img{
-    width: 150px;
+header nav a img{
+    width: 100px;
 }
 .nav-links{
     flex:1;
@@ -32,7 +32,7 @@ nav img{
     padding: 8px 12px;
     position: relative;
 }
-.nav-links ul li a{
+.nav-links ul li a,.nav-links ul li button {
     color: white;
     text-decoration: none;
     font-size: 18px;
@@ -87,4 +87,13 @@ nav h1{
     100% {
         transform: translate3d(-100%,0,0);
     }
+}
+
+
+.flag{
+    height: 45%;
+    width: 45%;
+}
+.dropdown-menu li{
+    text-align: center;
 }
