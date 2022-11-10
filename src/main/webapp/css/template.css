@@ -11,6 +11,15 @@ header{
     position: relative;
 }
 
+footer{
+    background-color: lightgray;
+    position:absolute;
+    bottom:0;
+    width: 100%;
+    height: 100px;
+    opacity: 50%;
+}
+
 nav{
     height: 150px;
     display: flex;

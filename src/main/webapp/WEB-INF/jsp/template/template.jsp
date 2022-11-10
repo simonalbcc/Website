@@ -2,7 +2,6 @@
 <%@include file="../include/importTags.jsp"%>
 <%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles"%>
 <html>
-
     <head>
         <meta charset="UTF-8">
         <title>Food Website</title>
@@ -20,7 +19,6 @@
                     <ul>
                         <li><a href='<spring:url value="/menu"/>'>MENU</a></li>
                         <li><a href='<spring:url value="/panier"/>'>PANIER</a></li>
-
                         <li class = "nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             LANGUES
@@ -33,10 +31,10 @@
 
                         <li class = "nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                PROFILE
+                                PROFIL
                             </a>
                             <ul class="dropdown-menu">
-                                <li><button class="btn btn-warning dropdown-item">CONNEXION</button></li>
+                                <li><a class="dropdown-item" style="color:black" href="#">CONNEXION</a></li>
                             </ul>
                         </li>
 
@@ -47,12 +45,13 @@
             <div id ="userBanner">
                 <p>Bonjour {user} </p>
             </div>
-            <div id = "content">
-                <tiles:insertAttribute name="main-content"/>
-            </div>
         </header>
-
-
+        <div>
+            <tiles:insertAttribute name="main-content"/>
+        </div>
+        <footer>
+            <p>Contact</p>
+        </footer>
     </body>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
 </html>
