@@ -20,7 +20,7 @@
                         <li><a href='<spring:url value="/menu"/>'>MENU</a></li>
                         <li><a href='<spring:url value="/panier"/>'>PANIER</a></li>
                         <li class = "nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             LANGUES
                             </a>
                             <ul class="dropdown-menu">
@@ -52,6 +52,8 @@
         <footer>
             <p>Contact</p>
         </footer>
+
+
     </body>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous" />
 </html>
