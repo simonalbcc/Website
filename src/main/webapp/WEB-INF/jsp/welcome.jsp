@@ -12,7 +12,7 @@
             <img class="" src='<spring:url value="/images/welcomeBear.png"/>'/>
         </div>
         <div id = "imgButton">
-            <a class="btn btn-light" href='<spring:url value="/contact"/>'>A propos de nous</a>
+            <a class="btn btn-light" href='<spring:url value="/contact"/>'><spring:message code="aboutUsButton"/></a>
         </div>
     </div>
     </body>

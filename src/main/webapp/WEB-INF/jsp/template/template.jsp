@@ -10,50 +10,58 @@
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,700;1,300;1,400&display=swap" rel="stylesheet">
         <link rel="stylesheet" href='<spring:url value="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>' type="text/css">
         <link rel="stylesheet" href='<spring:url value="/css/template.css"/>' type="text/css">
+
+        <spring:url var="localFr" value="">
+            <spring:param name="local" value="fr"/>
+        </spring:url>
+
+        <spring:url var="localEn" value="">
+            <spring:param name="local" value="en"/>
+        </spring:url>
+
+    </head>
     <body class = "mainContainer">
         <header>
             <nav>
                 <a href='<spring:url value="/welcome"/>'><img src='<spring:url value="/images/bearEating.png"/>'/></a>
-                <h1>La sandwicherie des ours</h1>
+                <h1><spring:message code ="shopName" /></h1>
                 <div class="nav-links">
                     <ul>
-                        <li><a href='<spring:url value="/menu"/>'>MENU</a></li>
-                        <li><a href='<spring:url value="/panier"/>'>PANIER</a></li>
+                        <li><a href='<spring:url value="/menu"/>'><spring:message code="menuNavBarLabel"/></a></li>
+                        <li><a href='<spring:url value="/panier"/>'><spring:message code="cartNavBarLabel"/></a></li>
                         <li class = "nav-item dropdown">
                             <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            LANGUES
+                                <spring:message code="languagesNavBarLabel"/>
                             </a>
                             <ul class="dropdown-menu">
-                                <li><button class="dropdown-item"> <img class ="flag" src='<spring:url value="/images/france.png"/>'/></button></li>
-                                <li><button class="dropdown-item"> <img class ="flag" src='<spring:url value="/images/united-kingdom.png"/>'/></button></li>
+                                <li><button class="dropdown-item" onclick="location.href='${localFr}'"> <img class ="flag" src='<spring:url value="/images/france.png"/>'/></button></li>
+                                <li><button class="dropdown-item" onclick="location.href='${localEn}'"> <img class ="flag" src='<spring:url value="/images/united-kingdom.png"/>'/></button></li>
                             </ul>
                         </li>
 
                         <li class = "nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                PROFIL
+                                <spring:message code="profileNavBarLabel"/>
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" style="color:black" href="#">CONNEXION</a></li>
+                                <li><a class="dropdown-item" style="color:black" href="#"><spring:message code="logInButton"/></a></li>
                             </ul>
                         </li>
 
-                        <li><input type="text" placeholder="Rechercher.."></li>
+                        <li><input type="text" placeholder="<spring:message code="searchBarDefaultText"/>"></li>
                     </ul>
                 </div>
             </nav>
             <div id ="userBanner">
-                <p>Bonjour {user} </p>
+                <p><spring:message code="welcomeMessage"/> {user} </p>
             </div>
         </header>
         <div>
             <tiles:insertAttribute name="main-content"/>
         </div>
         <footer>
-            <p>Contact</p>
+            <p><spring:message code="contactLabel"/></p>
         </footer>
-
-
     </body>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous" ></script>
 </html>
