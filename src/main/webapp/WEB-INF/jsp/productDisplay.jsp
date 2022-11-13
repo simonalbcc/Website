@@ -20,7 +20,7 @@
                         <h4>ingrédients</h4>
                         <h1>7€</h1>
                         <p>Le classique. Il fait l'affaire.</p>
-                        <button class="addButtons">Ajouter au panier</button>
+                        <button class="addButtons"><spring:message code="addCartButton"/></button>
                     </div>
                 </div>
             </tr>
@@ -34,7 +34,7 @@
                         <h4>ingrédients</h4>
                         <h1>7€</h1>
                         <p>Le classique. Il fait l'affaire.</p>
-                        <button class="addButtons">Ajouter au panier</button>
+                        <button class="addButtons"><spring:message code="addCartButton"/></button>
                     </div>
                 </div>
             </tr>
@@ -42,8 +42,8 @@
         <div id="addModal">
             <div id="modalContent">
                 <span class="close">&times;</span>
-                <p>Veuillez choisir une quantité :</p>
-                <input type="number" placeholder="1" step="1" min="0"/>
+                <p><spring:message code ="quantitySelectLabel"/></p>
+                <input type="number" placeholder="1" step="1" min="1"/>
                 <button id="confirmButton" class="btn btn-light">Ajouter</button>
             </div>
         </div>

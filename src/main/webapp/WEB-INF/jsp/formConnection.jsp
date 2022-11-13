@@ -16,16 +16,16 @@
             action="/foodWebsite/connection/send"
             modelAttribute="user">
         <div class="mb-3">
-            <form:label path="mailAddress" class="form-label">Email</form:label>
+            <form:label path="mailAddress" class="form-label"><spring:message code="emailFormLabel"/></form:label>
             <form:input type="email" class="form-control" path="mailAddress"/>
         </div>
         <div class="mb-3">
-            <form:label path="password" class="form-label">Mot de passe</form:label>
+            <form:label path="password" class="form-label"><spring:message code="passwordFormLabel"/></form:label>
             <form:input type="password" class="form-control" path="password"/>
         </div>
-        <button type="submit" class="btn btn-primary">Valider</button>
+        <button type="submit" class="btn btn-primary"><spring:message code="validateButtonLabel"/></button>
         <div>
-            <a href='<spring:url value="/inscription"/>'>S'inscrire</a>
+            <a href='<spring:url value="/inscription"/>'><spring:message code="logInButton"/></a>
         </div>
     </form:form>
 </div>
