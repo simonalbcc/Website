@@ -44,7 +44,7 @@
                                 <spring:message code="profileNavBarLabel"/>
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" style="color:black" href="#"><spring:message code="logInButton"/></a></li>
+                                <li><a class="dropdown-item" style="color:black" href='<spring:url value="/connection"/>'><spring:message code="logInButton"/></a></li>
                             </ul>
                         </li>
 
@@ -56,7 +56,7 @@
                 <p><spring:message code="welcomeMessage"/> {user} </p>
             </div>
         </header>
-        <div>
+        <div id = "mainContent">
             <tiles:insertAttribute name="main-content"/>
         </div>
         <footer>
