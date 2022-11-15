@@ -2,3 +2,8 @@ server:
     port: 8082
     servlet:
         contextPath: /foodWebsite
+spring:
+    datasource:
+        password: SiMargAlex2022
+        url: jdbc:mysql://localhost:3306/foodwebsite?user=root
+        driverClassName: com.mysql.cj.jdbc.Driver
