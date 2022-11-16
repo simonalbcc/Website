@@ -6,6 +6,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import javax.validation.Valid;
+import org.springframework.validation.BindingResult;
 
 @Controller
 @RequestMapping(value="/inscription")
@@ -18,7 +20,10 @@ public class InscriptionController {
     }
 
     @RequestMapping(value = "/send", method = RequestMethod.POST)
-    public String getFormData(@ModelAttribute(value="user") User user){
-        return "integrated:welcome";
+    public String getFormData(@Valid @ModelAttribute(value="user") User user, final BindingResult errors){
+        if(!errors.hasErrors()){
+            return "redirect:/welcome";
+        }
+        return "integrated:userInscription";
     }
 }

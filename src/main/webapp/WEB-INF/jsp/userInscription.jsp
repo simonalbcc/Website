@@ -17,8 +17,8 @@
             class="row g-3">
         <h2><spring:message code="signUpFormLabel"/></h2>
         <div class="col-md-6">
-            <form:label path="mailAddress" class="form-label"><spring:message code="emailFormLabel"/></form:label>
-            <form:input class="form-control" path="mailAddress"/>
+            <form:label path="emailAddress" class="form-label"><spring:message code="emailFormLabel"/></form:label>
+            <form:input type="email" class="form-control" path="emailAddress"/>
         </div>
         <div class="col-md-6">
             <form:label path="password" class="form-label"><spring:message code="passwordFormLabel"/></form:label>
@@ -26,11 +26,11 @@
         </div>
         <div class="col-md-6">
             <form:label path="lastName" class="form-label"><spring:message code="lastNameFormLabel"/></form:label>
-            <form:input type="email" class="form-control" path="lastName"/>
+            <form:input type="text" class="form-control" path="lastName"/>
         </div>
         <div class="col-md-6">
             <form:label path="firstName" class="form-label"><spring:message code="firstNameFormLabel"/></form:label>
-            <form:input class="form-control" path="firstName"/>
+            <form:input type="text" class="form-control" path="firstName"/>
         </div>
         <div class="col-12">
             <form:label path="address" class="form-label"><spring:message code="addressFormLabel"/></form:label>

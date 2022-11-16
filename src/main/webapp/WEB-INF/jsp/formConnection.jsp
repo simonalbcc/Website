@@ -16,8 +16,8 @@
             action="/foodWebsite/connection/send"
             modelAttribute="user">
         <div class="mb-3">
-            <form:label path="mailAddress" class="form-label"><spring:message code="emailFormLabel"/></form:label>
-            <form:input type="email" class="form-control" path="mailAddress"/>
+            <form:label path="emailAddress" class="form-label"><spring:message code="emailFormLabel"/></form:label>
+            <form:input type="email" class="form-control" path="emailAddress"/>
         </div>
         <div class="mb-3">
             <form:label path="password" class="form-label"><spring:message code="passwordFormLabel"/></form:label>
