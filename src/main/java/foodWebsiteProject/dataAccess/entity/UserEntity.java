@@ -1,40 +1,34 @@
-package foodWebsiteProject.model;
-import javax.validation.constraints.*;
+package foodWebsiteProject.dataAccess.entity;
 
-public class User {
+import javax.persistence.*;
 
-    @Size(max = 15)
-    @Pattern(regexp = "[A-ZÀ-ÖØà-ÿa-z'-]{0,6}\\s[A-ZÀ-ÖØà-ÿa-z'-]{0,9}|[A-ZÀ-ÖØà-ÿa-z'-]{0,14}")
-    @NotEmpty
-    private String firstName;
 
-    @Size(max = 15)
-    @Pattern(regexp = "[A-ZÀ-ÖØà-ÿa-z'-]{0,6}\\s[A-ZÀ-ÖØà-ÿa-z'-]{0,9}|[A-ZÀ-ÖØà-ÿa-z'-]{0,14}")
-    @NotEmpty
-    private String lastName;
-
-    @Size(max = 30)
-    @NotEmpty
-    private String password;
-
-    @Size(max = 30)
-    @Pattern(regexp = "^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$")
-    @NotEmpty
+@Entity
+@Table(name = "user")
+public class UserEntity {
+    @Id
+    @Column(name = "email")
     private String emailAddress;
 
-    @Size(max = 30)
-    @NotEmpty
+    @Column(name = "first_name")
+    private String firstName;
+
+    @Column(name = "last_name")
+    private String lastName;
+
+    @Column(name = "password")
+    private String password;
+
+    @Column(name = "address")
     private String address;
 
-    @Size(max = 10)
+    @Column(name = "phone")
     private String numberPhone;
+
+    @Column(name = "fidelity_card")
     private Integer fidelityCard;
 
-    public User(){
-
-    }
-    //region getters
-
+    //region getter
     public String getFirstName() {
         return firstName;
     }
@@ -62,12 +56,12 @@ public class User {
     public Integer getFidelityCard() {
         return fidelityCard;
     }
-    //endregion
+//endregion
 
-    //region setters
+//region setter
     public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
+    this.firstName = firstName;
+}
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
@@ -93,5 +87,5 @@ public class User {
         this.fidelityCard = fidelityCard;
     }
     //endregion
-
 }
+
