@@ -27,6 +27,7 @@ public class User {
     private String address;
 
     @Size(max = 10)
+    @Pattern(regexp = "\\+?\\d*")
     private String numberPhone;
     private Integer fidelityCard;
 
