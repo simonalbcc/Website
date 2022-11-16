@@ -25,7 +25,7 @@
         </div>
         <button type="submit" class="btn btn-primary"><spring:message code="validateButtonLabel"/></button>
         <div>
-            <a href='<spring:url value="/inscription"/>'><spring:message code="logInButton"/></a>
+            <a href='<spring:url value="/inscription"/>'><spring:message code="signUpButton"/></a>
         </div>
     </form:form>
 </div>

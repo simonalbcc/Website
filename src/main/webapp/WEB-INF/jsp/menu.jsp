@@ -12,7 +12,7 @@
         <div>
             <a class="btn btn-light" style="--bs-btn-padding-y: 1rem; --bs-btn-padding-x: 1rem; --bs-btn-font-size: 2rem;" href='<spring:url value="/products"/>'><spring:message code ="pastaButton"/></a>
         </div>
-        <img src='<spring:url value="/images/welcomeBear.png"/>'/>
+        <img src='<spring:url value="/images/Logos/welcomeBear.png"/>'/>
         <div>
             <a class="btn btn-light" style="--bs-btn-padding-y: 1rem; --bs-btn-padding-x: 1rem; --bs-btn-font-size: 2rem;" href='<spring:url value="/products"/>'><spring:message code ="sandwichButton"/></a>
         </div>

@@ -23,7 +23,7 @@
     <body class = "mainContainer">
         <header>
             <nav>
-                <a href='<spring:url value="/welcome"/>'><img src='<spring:url value="/images/bearEating.png"/>'/></a>
+                <a href='<spring:url value="/welcome"/>'><img src='<spring:url value="/images/Logos/bearEating.png"/>'/></a>
                 <h1><spring:message code ="shopName" /></h1>
                 <div class="nav-links">
                     <ul>
@@ -34,8 +34,8 @@
                                 <spring:message code="languagesNavBarLabel"/>
                             </a>
                             <ul class="dropdown-menu">
-                                <li><button class="dropdown-item" onclick="location.href='${localFr}'"> <img class ="flag" src='<spring:url value="/images/france.png"/>'/></button></li>
-                                <li><button class="dropdown-item" onclick="location.href='${localEn}'"> <img class ="flag" src='<spring:url value="/images/united-kingdom.png"/>'/></button></li>
+                                <li><button class="dropdown-item" onclick="location.href='${localFr}'"> <img class ="flag" src='<spring:url value="/images/Logos/france.png"/>'/></button></li>
+                                <li><button class="dropdown-item" onclick="location.href='${localEn}'"> <img class ="flag" src='<spring:url value="/images/Logos/united-kingdom.png"/>'/></button></li>
                             </ul>
                         </li>
 
