@@ -18,7 +18,7 @@
         <h2><spring:message code="signUpFormLabel"/></h2>
         <div class="col-md-6">
             <form:label path="emailAddress" class="form-label"><spring:message code="emailFormLabel"/></form:label>
-            <form:input type="email" class="form-control" path="emailAddress"/>
+            <form:input class="form-control" path="emailAddress"/>
             <form:errors path="emailAddress"/>
         </div>
         <div class="col-md-6">

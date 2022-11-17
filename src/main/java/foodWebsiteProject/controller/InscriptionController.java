@@ -6,6 +6,7 @@ import foodWebsiteProject.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -31,8 +32,15 @@ public class InscriptionController {
 
     @RequestMapping(value = "/send", method = RequestMethod.POST)
     public String getFormData(@Valid @ModelAttribute(value="user") User user, final BindingResult errors){
+        if(userDAO.isAlreadyCreated(user)) {
+            errors.rejectValue("emailAddress","userEmail");
+            System.out.println(errors.getAllErrors());
+        }
         if(!errors.hasErrors()){
             user.setFidelityCard(0);
+            if(user.getNumberPhone().equals("")){
+                user.setNumberPhone(null);
+            }
             userDAO.save(user);
             return "redirect:/welcome";
         }

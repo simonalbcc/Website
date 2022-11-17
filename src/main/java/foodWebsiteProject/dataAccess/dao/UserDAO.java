@@ -25,4 +25,8 @@ public class UserDAO implements UserDataAccess{
         userEntity = userRepository.save(userEntity);
         return userConverter.userEntityToUserModel(userEntity);
     }
+
+    public Boolean isAlreadyCreated(User user){
+        return userRepository.existsById(user.getEmailAddress());
+    }
 }
