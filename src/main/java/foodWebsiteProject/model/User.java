@@ -2,15 +2,13 @@ package foodWebsiteProject.model;
 import javax.validation.constraints.*;
 
 import net.bytebuddy.implementation.bind.annotation.Default;
-import org.springframework.security.core.GrantedAuthority;
+/*import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
-import org.springframework.security.core.userdetails.UserDetails;
-
+import org.springframework.security.core.userdetails.UserDetails;*/
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
 
-public class User implements UserDetails{
+
+public class User /*implements UserDetails*/{
 
     @Size(max = 15)
     @Pattern(regexp = "[A-ZÀ-ÖØà-ÿa-z'-]{0,6}\\s[A-ZÀ-ÖØà-ÿa-z'-]{0,9}|[A-ZÀ-ÖØà-ÿa-z'-]{0,14}")
@@ -52,7 +50,7 @@ public class User implements UserDetails{
     }
 
     //region security
-    @Override
+   /* @Override
     public Collection<GrantedAuthority> getAuthorities() {
         List<GrantedAuthority> grantedAuthorities = new ArrayList<>();
 
@@ -125,7 +123,7 @@ public class User implements UserDetails{
     public void setEnabled(Boolean enabled) {
         this.enabled = enabled;
     }
-
+*/
     //endregion
     //region getters
 
