@@ -4,7 +4,6 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Food Website</title>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,700;1,300;1,400&display=swap" rel="stylesheet">
@@ -20,17 +19,17 @@
         </spring:url>
 
     </head>
-    <body class = "mainContainer">
+    <body>
         <header>
             <nav>
                 <a href='<spring:url value="/welcome"/>'><img src='<spring:url value="/images/Logos/bearEating.png"/>'/></a>
-                <h1><spring:message code ="shopName" /></h1>
+                <h1 style="color:white"><spring:message code ="shopName" /></h1>
                 <div class="nav-links">
                     <ul>
                         <li><a href='<spring:url value="/menu"/>'><spring:message code="menuNavBarLabel"/></a></li>
                         <li><a href='<spring:url value="/panier"/>'><spring:message code="cartNavBarLabel"/></a></li>
                         <li class = "nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <a role="button" style= "color:white" data-bs-toggle="dropdown" aria-expanded="false">
                                 <spring:message code="languagesNavBarLabel"/>
                             </a>
                             <ul class="dropdown-menu">
@@ -38,13 +37,12 @@
                                 <li><button class="dropdown-item" onclick="location.href='${localEn}'"> <img class ="flag" src='<spring:url value="/images/Logos/united-kingdom.png"/>'/></button></li>
                             </ul>
                         </li>
-
                         <li class = "nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <a role="button" style= "color:white" data-bs-toggle="dropdown" aria-expanded="false">
                                 <spring:message code="profileNavBarLabel"/>
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" style="color:black" href='<spring:url value="/connection"/>'><spring:message code="logInButton"/></a></li>
+                                <li><a class="dropdown-item" style="color:white" href='<spring:url value="/connection"/>'><spring:message code="logInButton"/></a></li>
                             </ul>
                         </li>
 

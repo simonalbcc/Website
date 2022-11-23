@@ -3,7 +3,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Welcome</title>
+    <title>${title}</title>
     <link rel="stylesheet" href='<spring:url value="/css/welcome.css"/>' type="text/css">
 </head>
     <body>

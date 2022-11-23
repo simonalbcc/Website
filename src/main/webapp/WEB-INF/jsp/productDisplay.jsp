@@ -3,12 +3,12 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Menu</title>
+    <title>${title}</title>
     <link rel="stylesheet" href='<spring:url value="/css/product.css"/>' type="text/css">
     <link rel="stylesheet" href='<spring:url value="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>' type="text/css">
 </head>
     <body>
-        <h2>Les {produits sélectionnés}</h2>
+        <h2>Les ${title}</h2>
         <table id = "produits">
             <tr>
                 <div class="card">

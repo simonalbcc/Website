@@ -78,10 +78,6 @@ header nav a img{
     width: 100%;
 }
 
-nav h1{
-    color: white;
-}
-
 #userBanner{
     background-color: darkorange;
     overflow: hidden;
@@ -107,11 +103,15 @@ nav h1{
     }
 }
 
-
 .flag{
     height: 45%;
     width: 45%;
 }
 .dropdown-menu li{
     text-align: center;
+}
+
+
+a.dropdown-item, a.dropdown-item:hover{
+    background-color: orange;
 }

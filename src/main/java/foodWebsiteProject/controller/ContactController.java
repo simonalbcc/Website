@@ -11,7 +11,8 @@ public class ContactController {
 
     @RequestMapping(method = RequestMethod.GET)
     public String home (Model model){
-            return "integrated:contact";
-        }
+        model.addAttribute("title", "Contact");
+        return "integrated:contact";
+    }
 
 }

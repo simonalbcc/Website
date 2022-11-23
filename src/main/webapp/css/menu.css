@@ -1,11 +1,12 @@
-#menu{
+#container{
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100%;
+    margin-top: 5%;
 }
 
-#menu img{
+#container img{
     margin-right: 30px;
     margin-left : 30px;
 }
