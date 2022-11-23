@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import javax.validation.Valid;
 import org.springframework.validation.BindingResult;
 
+
 @Controller
 @RequestMapping(value="/inscription")
 public class InscriptionController {
