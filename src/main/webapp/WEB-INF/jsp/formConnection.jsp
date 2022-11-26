@@ -2,9 +2,6 @@
 <%@ include file="include/importTags.jsp"%>
 <html>
 <head>
-    <meta charset="utf-8">
-    <title>${title}</title>
-    <link rel="stylesheet" href='<spring:url value="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>' type="text/css">
     <link rel="stylesheet" href='<spring:url value="/css/form.css"/>' type="text/css">
 </head>
 <body>

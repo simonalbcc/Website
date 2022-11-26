@@ -15,7 +15,7 @@ public class UserConverter {
         userEntity.setLastName(user.getLastName());
         userEntity.setFirstName(user.getFirstName());
         userEntity.setFidelityCard(user.getFidelityCard());
-        //userEntity.setPassword(user.getPassword());
+        userEntity.setPassword(user.getPassword());
         userEntity.setNumberPhone(user.getNumberPhone());
         return userEntity;
     }
@@ -27,7 +27,7 @@ public class UserConverter {
         user.setLastName(userEntity.getLastName());
         user.setFirstName(userEntity.getFirstName());
         user.setFidelityCard(userEntity.getFidelityCard());
-       // user.setPassword(userEntity.getPassword());
+        user.setPassword(userEntity.getPassword());
         user.setNumberPhone(userEntity.getNumberPhone());
         return user;
     }

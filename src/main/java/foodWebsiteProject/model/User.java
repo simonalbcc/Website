@@ -127,6 +127,9 @@ public class User /*implements UserDetails*/{
     //endregion
     //region getters
 
+    public String getPassword() {
+        return password;
+    }
     public String getFirstName() {
         return firstName;
     }
@@ -175,6 +178,10 @@ public class User /*implements UserDetails*/{
 
     public void setFidelityCard(Integer fidelityCard) {
         this.fidelityCard = fidelityCard;
+    }
+
+    public String setPassword(String password) {
+        return this.password = password;
     }
     //endregion
 
