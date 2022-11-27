@@ -12,7 +12,7 @@
             <tr>
                 <div class="card">
                     <div class="photo">
-                        <img src='<spring:url value="/images/Sandwichs/${products[0]}.png"/>'>
+                        <img src='<spring:url value="/images/Sandwichs/${products.get(0)}.png"/>'>
                     </div>
                     <div class="description">
                         <h2>Le classique</h2>
