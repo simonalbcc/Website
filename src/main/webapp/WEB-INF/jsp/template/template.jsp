@@ -27,7 +27,7 @@
                 <div class="nav-links">
                     <ul>
                         <li><a href='<spring:url value="/menu"/>'><spring:message code="menuNavBarLabel"/></a></li>
-                        <li><a href='<spring:url value="/panier"/>'><spring:message code="cartNavBarLabel"/></a></li>
+                        <li><a href='<spring:url value="/cart"/>'><spring:message code="cartNavBarLabel"/></a></li>
                         <li class = "nav-item dropdown">
                             <a role="button" style= "color:white" data-bs-toggle="dropdown" aria-expanded="false">
                                 <spring:message code="languagesNavBarLabel"/>
