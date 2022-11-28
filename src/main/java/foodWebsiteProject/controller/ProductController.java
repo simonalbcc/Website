@@ -24,12 +24,9 @@ public class ProductController {
     @RequestMapping(value = "/{category}", method = RequestMethod.GET)
     public String getProducts (@PathVariable("category") Integer categoryId, Model model){
         List<Product> products = productDAO.getAllProductsByCategoryId(categoryId);
-        Integer id;
-
-       // id =  categories.stream().filter(category -> category.getCategoryId().equals(categoryId)).map(CategoryTranslation::getLabel).collect(Collectors.toCollection(ArrayList :: new)).get(0);
 
         model.addAttribute("products", products);
         model.addAttribute("title", "Produits");
-        return "integrated:productDisplay";
+        return "integrated:products";
     }
 }

@@ -5,6 +5,10 @@ public class Category {
 
     public Category() {}
 
+    public Category(Integer id) {
+        this.id = id;
+    }
+
     public Integer getId() {
         return id;
     }

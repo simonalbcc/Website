@@ -7,9 +7,19 @@ public class Product {
     private Integer id;
     private String name;
     private String size;
-    private Float price_catalog;
+    private Float priceCatalog;
     private String description;
     private Integer category;
+
+    public Product(){}
+    public Product(Integer id, String name, String size, Float priceCatalog, String description, Integer category) {
+        this.id = id;
+        this.name = name;
+        this.size = size;
+        this.priceCatalog = priceCatalog;
+        this.description = description;
+        this.category = category;
+    }
 
     //region getter
     public Integer getId() {
@@ -24,8 +34,8 @@ public class Product {
         return size;
     }
 
-    public Float getPrice_catalog() {
-        return price_catalog;
+    public Float getPriceCatalog() {
+        return priceCatalog;
     }
 
     public String getDescription() {
@@ -50,8 +60,8 @@ public class Product {
         this.size = size;
     }
 
-    public void setPrice_catalog(Float price_catalog) {
-        this.price_catalog = price_catalog;
+    public void setPriceCatalog(Float priceCatalog) {
+        this.priceCatalog = priceCatalog;
     }
 
     public void setDescription(String description) {
@@ -63,5 +73,4 @@ public class Product {
     }
     //endregion
 
-    public Product(){}
 }

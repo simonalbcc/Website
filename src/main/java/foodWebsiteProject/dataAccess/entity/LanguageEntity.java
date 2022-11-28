@@ -13,6 +13,5 @@ public class LanguageEntity {
     private String name;
 
     @Column(name="translation")
-    private Integer translation; 
-
+    private Integer translation;
 }

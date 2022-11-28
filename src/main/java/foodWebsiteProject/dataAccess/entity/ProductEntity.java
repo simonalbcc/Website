@@ -21,8 +21,11 @@ public class ProductEntity {
     @Column(name = "description")
     private String description;
 
-    @Column(name="category")
-    private Integer category;
+    @JoinColumn(name="category", referencedColumnName = "id")
+    @ManyToOne
+    private CategoryEntity category;
+
+    public ProductEntity() {}
 
     //region getter
     public Integer getId() {
@@ -45,7 +48,7 @@ public class ProductEntity {
         return description;
     }
 
-    public Integer getCategory() {
+    public CategoryEntity getCategory() {
         return category;
     }
     //endregion
@@ -63,15 +66,15 @@ public class ProductEntity {
         this.size = size;
     }
 
-    public void setPriceCatalog(Float price_catalog) {
-        this.priceCatalog = price_catalog;
+    public void setPriceCatalog(Float priceCatalog) {
+        this.priceCatalog = priceCatalog;
     }
 
     public void setDescription(String description) {
         this.description = description;
     }
 
-    public void setCategory(Integer category) {
+    public void setCategory(CategoryEntity category) {
         this.category = category;
     }
     //endregion

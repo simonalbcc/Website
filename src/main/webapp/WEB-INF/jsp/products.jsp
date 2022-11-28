@@ -19,7 +19,7 @@
                         <h2>${product.getName()}</h2>
                         <h4>${product.getDescription()}</h4>
                         <h4>Taille: ${product.getSize()}</h4>
-                        <p>${product.getPrice_catalog()}</p>
+                        <p>${product.getPriceCatalog()}</p>
                         <button class="addButtons"><spring:message code="addCartButton"/></button>
                     </div>
                 </div>

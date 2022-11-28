@@ -7,13 +7,16 @@ import foodWebsiteProject.model.Category;
 import foodWebsiteProject.model.Product;
 import foodWebsiteProject.model.User;
 import org.dozer.DozerBeanMapper;
-import org.dozer.Mapper;
 import org.springframework.stereotype.Component;
 
 @Component
 public class ProviderConverter {
 
-    DozerBeanMapper mapper = new DozerBeanMapper();
+    DozerBeanMapper mapper;
+
+    public ProviderConverter() {
+        mapper = new DozerBeanMapper();
+    }
 
     public UserEntity userModelToUserEntity(User user){
         return mapper.map(user, UserEntity.class);
@@ -27,7 +30,7 @@ public class ProviderConverter {
     public CategoryEntity categoryModelToCategoryEntity(Category category){
         return mapper.map(category, CategoryEntity.class);
     }
-    public Category categoryModelToCategoryEntity(CategoryEntity categoryEntity){
+    public Category categoryEntityToCategoryModel(CategoryEntity categoryEntity){
         return mapper.map(categoryEntity, Category.class);
     }
 
@@ -35,7 +38,13 @@ public class ProviderConverter {
         return mapper.map(product, ProductEntity.class);
     }
     public Product productEntityToProductModel(ProductEntity productEntity){
-        return mapper.map(productEntity, Product.class);
+        Product product = new Product();
+        product.setCategory(productEntity.getCategory().getId()); // pb
+        product.setId(productEntity.getId());
+        product.setDescription(productEntity.getDescription());
+        product.setName(productEntity.getName());
+        product.setSize(productEntity.getSize());
+        product.setPriceCatalog(productEntity.getPriceCatalog());
+        return product;
     }
-
 }
