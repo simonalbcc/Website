@@ -31,14 +31,7 @@ body .card .description {
     width: 55%;
     border-left: 2px solid #efefef;
 }
-body .card .description h1 {
-    color: #515151;
-    font-weight: 300;
-    padding-top: 15px;
-    margin: 0;
-    font-size: 30px;
-    font-weight: 300;
-}
+
 body .card .description h2 {
     color: #515151;
     margin: 0;
@@ -56,7 +49,6 @@ body .card .description p {
     font-size: 12px;
     line-height: 20px;
     color: #727272;
-    padding: 20px 0;
     margin: 0;
 }
 body .card .description button {
@@ -64,6 +56,7 @@ body .card .description button {
     border: 0;
     background: none;
     border: 1px solid #515151;
+    margin-top: 20px;
     padding: 8px 0px;
     margin-bottom: 30px;
     color: #515151;

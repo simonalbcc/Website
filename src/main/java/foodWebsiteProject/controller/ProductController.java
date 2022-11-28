@@ -19,6 +19,7 @@ public class ProductController {
     public ProductController(ProductDAO productDAO){
         this.productDAO = productDAO;
     }
+
     @RequestMapping(method = RequestMethod.GET)
     public String home (Model model){
         List<Product> products = productDAO.getAllFromCategory(1);

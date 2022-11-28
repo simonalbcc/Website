@@ -8,21 +8,23 @@
 </head>
     <body>
         <h2>Les ${title}</h2>
-        <table id = "produits">µ
+        <table>
+            <c:forEach items="${products}" var="product">
             <tr>
                 <div class="card">
                     <div class="photo">
-                        <img src='<spring:url value="/images/Sandwichs/${products.get(0)}.png"/>'>
+                        <img src='<spring:url value="/images/Sandwichs/${product.getName()}.png"/>'>
                     </div>
                     <div class="description">
-                        <h2>Le classique</h2>
-                        <h4>ingrédients</h4>
-                        <h1>7€</h1>
-                        <p>Le classique. Il fait l'affaire.</p>
+                        <h2>${product.getName()}</h2>
+                        <h4>${product.getDescription()}</h4>
+                        <h4>Taille: ${product.getSize()}</h4>
+                        <p>${product.getPrice_catalog()}</p>
                         <button class="addButtons"><spring:message code="addCartButton"/></button>
                     </div>
                 </div>
             </tr>
+            </c:forEach>
         </table>
         <div id="addModal">
             <div id="modalContent">

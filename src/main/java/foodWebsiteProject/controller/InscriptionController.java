@@ -35,7 +35,6 @@ public class InscriptionController {
     public String getFormData(@Valid @ModelAttribute(value="user") User user, final BindingResult errors){
         if(userDAO.isAlreadyCreated(user)) {
             errors.rejectValue("emailAddress","userEmail");
-            System.out.println(errors.getAllErrors());
         }
         if(!errors.hasErrors()){
             user.setFidelityCard(0);
