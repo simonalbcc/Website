@@ -16,7 +16,7 @@ public class ProductEntity {
     private String size;
 
     @Column(name="price_catalog")
-    private Float price_catalog;
+    private Float priceCatalog;
 
     @Column(name = "description")
     private String description;
@@ -37,8 +37,8 @@ public class ProductEntity {
         return size;
     }
 
-    public Float getPrice_catalog() {
-        return price_catalog;
+    public Float getPriceCatalog() {
+        return priceCatalog;
     }
 
     public String getDescription() {
@@ -63,8 +63,8 @@ public class ProductEntity {
         this.size = size;
     }
 
-    public void setPrice_catalog(Float price_catalog) {
-        this.price_catalog = price_catalog;
+    public void setPriceCatalog(Float price_catalog) {
+        this.priceCatalog = price_catalog;
     }
 
     public void setDescription(String description) {

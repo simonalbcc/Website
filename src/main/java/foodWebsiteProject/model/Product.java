@@ -4,7 +4,6 @@ import javax.persistence.Column;
 import javax.persistence.Id;
 
 public class Product {
-
     private Integer id;
     private String name;
     private String size;
@@ -64,8 +63,5 @@ public class Product {
     }
     //endregion
 
-    public Product(){
-
-    }
-
+    public Product(){}
 }

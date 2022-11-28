@@ -9,9 +9,9 @@
 </head>
 <body>
     <div id = "container">
-        <a class="btn btn-light" style="--bs-btn-padding-y: 1rem; --bs-btn-padding-x: 1rem; --bs-btn-font-size: 2rem;" href='<spring:url value="/products"/>'><spring:message code ="pastaButton"/></a>
+        <a class="btn btn-light" style="--bs-btn-padding-y: 1rem; --bs-btn-padding-x: 1rem; --bs-btn-font-size: 2rem;" href='<spring:url value="/products/1"/>'><spring:message code ="pastaButton"/></a>
         <img src='<spring:url value="/images/Logos/welcomeBear.png"/>' alt="welcome bear image"/>
-        <a class="btn btn-light" style="--bs-btn-padding-y: 1rem; --bs-btn-padding-x: 1rem; --bs-btn-font-size: 2rem;" href='<spring:url value="/products"/>'><spring:message code ="sandwichButton"/></a>
+        <a class="btn btn-light" style="--bs-btn-padding-y: 1rem; --bs-btn-padding-x: 1rem; --bs-btn-font-size: 2rem;" href='<spring:url value="/products/2"/>'><spring:message code ="sandwichButton"/></a>
     </div>
 </body>
 </html>

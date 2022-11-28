@@ -2,10 +2,8 @@ package foodWebsiteProject.dataAccess.dao;
 
 import foodWebsiteProject.model.Product;
 
-import java.util.List;
+import java.util.ArrayList;
 
 public interface ProductDataAccess  {
-
-    List<Product> getAllFromCategory(Integer id_category);
-
+    public ArrayList<Product> getAllProductsByCategoryId(Integer categoryId);
 }

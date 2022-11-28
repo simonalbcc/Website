@@ -9,7 +9,6 @@ import java.util.ArrayList;
 
 
 public class User /*implements UserDetails*/{
-
     @Size(max = 15)
     @Pattern(regexp = "[A-ZÀ-ÖØà-ÿa-z'-]{0,6}\\s[A-ZÀ-ÖØà-ÿa-z'-]{0,9}|[A-ZÀ-ÖØà-ÿa-z'-]{0,14}")
     @NotEmpty
@@ -45,9 +44,7 @@ public class User /*implements UserDetails*/{
     private Boolean accountNonLocked;
     private Boolean credentialsNonExpired;
     private String authorities;
-    public User(){
-
-    }
+    public User(){}
 
     //region security
    /* @Override

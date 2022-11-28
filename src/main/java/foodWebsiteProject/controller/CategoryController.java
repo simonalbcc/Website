@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 @RequestMapping(value="/menu")
-public class MenuController {
+public class CategoryController {
 
     @RequestMapping(method = RequestMethod.GET)
     public String home (Model model){
