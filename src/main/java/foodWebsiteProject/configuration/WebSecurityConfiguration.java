@@ -14,7 +14,7 @@ import org.springframework.security.web.authentication.SavedRequestAwareAuthenti
 @EnableWebSecurity
 public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
     private static final String LOGIN_REQUEST = "/connection";
-    private static final String[] AUTHORIZED_REQUESTS_ANYBODY = new String[]{"/welcome","/contact","/inscription","/menu","/products/1","/products/2","/css/**","/images/**"};
+    private static final String[] AUTHORIZED_REQUESTS_ANYBODY = new String[]{"/welcome","/contact","/inscription/**","/menu","/products/1","/products/2","/css/**","/images/**"};
 
 
     private UserDetailsService userDetailsService;
@@ -39,22 +39,14 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .loginPage(LOGIN_REQUEST) // We specify a login page. Otherwise spring creates one by default
                 .permitAll() // To make the login page the available for any user
                 .usernameParameter("emailAddress")
+                .defaultSuccessUrl("/welcome")
 
                 .and()
                 .logout() // We define the logout part here - By default : URL = "/logout"
-                //.logoutUrl("...") // If other link than "/logout" (that is by default)
-                .logoutSuccessUrl("/home")  // URL to return if logout is successfull
+                .logoutSuccessUrl("/welcome")  // URL to return if logout is successfull
                 .permitAll(); // To make the logout available for any user
     }
-
-
-
-
-    /**
-     * We provide the service which will return the user and the password encoder
-     * The service which is created here need to implement an interface provided by spring security.
-     * See @UserDetailsServiceImpl
-     */
+    
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
         auth.userDetailsService(userDetailsService).passwordEncoder(new BCryptPasswordEncoder());

@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import javax.validation.Valid;
 import org.springframework.validation.BindingResult;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 
 @Controller
@@ -36,15 +37,23 @@ public class InscriptionController {
         if(userDAO.isAlreadyCreated(user)) {
             errors.rejectValue("emailAddress","userEmail");
         }
-        System.out.println(errors);
         if(!errors.hasErrors()){
             user.setFidelityCard(0);
             if(user.getNumberPhone().equals("")){
                 user.setNumberPhone(null);
             }
+            user.setCredentialsNonExpired(true);
+            user.setAccountNonLocked(true);
+            user.setAccountNonExpired(true);
+            user.setEnabled(true);
+            user.setAuthorities("USER");
+
+            BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
+            String password = bCryptPasswordEncoder.encode(user.getPassword());
+            user.setPassword(password);
             userDAO.save(user);
             return "redirect:/welcome";
         }
-        return "integrated:userInscription";
+        return "integrated:formInscription";
     }
 }

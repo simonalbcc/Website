@@ -42,17 +42,22 @@
                                 <spring:message code="profileNavBarLabel"/>
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" style="color:white" href='<spring:url value="/connection"/>'><spring:message code="logInButton"/></a></li>
+                                <sec:authorize access="!isAuthenticated()">
+                                    <li><a class="dropdown-item" style="color:white" href='<spring:url value="/connection"/>'><spring:message code="logInButton"/></a></li>
+                                </sec:authorize>
+                                <sec:authorize access="isAuthenticated()">
+                                    <li><a class="dropdown-item" style="color:white" href='<spring:url value="/logout"/>'><spring:message code="logOutButton"/></a></li>
+                                </sec:authorize>
                             </ul>
                         </li>
-
-                        <li><input type="text" placeholder="<spring:message code="searchBarDefaultText"/>"></li>
                     </ul>
                 </div>
             </nav>
+            <sec:authorize access="isAuthenticated()">
             <div id ="userBanner">
-                <p><spring:message code="welcomeMessage"/> {user} </p>
+                <p><spring:message code="welcomeMessage"/> ${pageContext.request.userPrincipal.principal.firstName} </p>
             </div>
+            </sec:authorize>
         </header>
         <div id = "mainContent">
             <tiles:insertAttribute name="main-content"/>

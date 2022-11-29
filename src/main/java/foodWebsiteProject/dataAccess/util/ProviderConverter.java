@@ -28,7 +28,7 @@ public class ProviderConverter {
         userEntity.setNonLocked(user.getAccountNonLocked());
         userEntity.setCredentialsNonExpired(user.getCredentialsNonExpired());
         userEntity.setEnabled(user.getEnabled());
-        userEntity.setAuthorities("aaa");
+        userEntity.setAuthorities("user");
         return userEntity;
     }
 
