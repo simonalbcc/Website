@@ -9,6 +9,8 @@ import foodWebsiteProject.model.User;
 import org.dozer.DozerBeanMapper;
 import org.springframework.stereotype.Component;
 
+import javax.swing.*;
+
 @Component
 public class ProviderConverter {
 
@@ -19,11 +21,28 @@ public class ProviderConverter {
     }
 
     public UserEntity userModelToUserEntity(User user){
-        return mapper.map(user, UserEntity.class);
+
+        UserEntity userEntity  = mapper.map(user, UserEntity.class);
+        userEntity.setNumberPhone(user.getNumberPhone());
+        userEntity.setNonExpired(user.getAccountNonExpired());
+        userEntity.setNonLocked(user.getAccountNonLocked());
+        userEntity.setCredentialsNonExpired(user.getCredentialsNonExpired());
+        userEntity.setEnabled(user.getEnabled());
+        userEntity.setAuthorities("aaa");
+        return userEntity;
     }
 
     public User userEntityToUserModel(UserEntity userEntity){
-        return mapper.map(userEntity, User.class);
+        if(userEntity == null){
+            return null;
+        }
+        User user = mapper.map(userEntity, User.class);
+        user.setAccountNonExpired(userEntity.getNonExpired());
+        user.setAccountNonLocked(userEntity.getNonLocked());
+        user.setCredentialsNonExpired(userEntity.getCredentialsNonExpired());
+        user.setEnabled(userEntity.getEnabled());
+        user.setAuthorities(userEntity.getAuthorities());
+        return user;
     }
 
 

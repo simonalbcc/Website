@@ -60,7 +60,7 @@
             <version>8.0.17</version>
         </dependency>
 
-        <!--
+
         <dependency>
              <groupId>org.springframework.boot</groupId>
              <artifactId>spring-boot-starter-security</artifactId>
@@ -71,7 +71,7 @@
              <groupId>org.springframework.security</groupId>
              <artifactId>spring-security-taglibs</artifactId>
          </dependency>
-         -->
+
 
         <dependency>
             <groupId>net.sf.dozer</groupId>

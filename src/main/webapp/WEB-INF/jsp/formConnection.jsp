@@ -11,7 +11,6 @@
             <form:form
                     id="form"
                     method="POST"
-                    action="/foodWebsite/connection/send"
                     modelAttribute="user">
                 <div class="col-md-8">
                     <form:label path="emailAddress" class="form-label"><spring:message code="emailFormLabel"/></form:label>

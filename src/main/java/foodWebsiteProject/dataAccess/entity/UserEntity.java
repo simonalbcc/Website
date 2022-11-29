@@ -28,6 +28,21 @@ public class UserEntity {
     @Column(name = "fidelity_card")
     private Integer fidelityCard;
 
+    @Column(name = "authorities")
+    private String authorities;
+
+    @Column(name = "non_expired")
+    private Boolean nonExpired;
+
+    @Column(name = "non_locked")
+    private Boolean nonLocked;
+
+    @Column(name ="credentials_non_expired")
+    private Boolean credentialsNonExpired;
+
+    @Column(name = "enabled")
+    private Boolean enabled;
+
     //region getter
     public String getFirstName() {
         return firstName;
@@ -56,9 +71,30 @@ public class UserEntity {
     public Integer getFidelityCard() {
         return fidelityCard;
     }
-//endregion
 
-//region setter
+    public String getAuthorities() {
+        return authorities;
+    }
+
+    public Boolean getNonExpired() {
+        return nonExpired;
+    }
+
+    public Boolean getNonLocked() {
+        return nonLocked;
+    }
+
+    public Boolean getCredentialsNonExpired() {
+        return credentialsNonExpired;
+    }
+
+    public Boolean getEnabled() {
+        return enabled;
+    }
+
+    //endregion
+
+    //region setter
     public void setFirstName(String firstName) {
     this.firstName = firstName;
 }
@@ -86,6 +122,26 @@ public class UserEntity {
     public void setFidelityCard(Integer fidelityCard) {
         this.fidelityCard = fidelityCard;
     }
+
+    public void setNonExpired(Boolean nonExpired) {
+        this.nonExpired = nonExpired;
+    }
+
+    public void setNonLocked(Boolean nonLocked) {
+        this.nonLocked = nonLocked;
+    }
+
+    public void setCredentialsNonExpired(Boolean credentialsNonExpired) {
+        this.credentialsNonExpired = credentialsNonExpired;
+    }
+    public void setEnabled(Boolean enabled) {
+        this.enabled = enabled;
+    }
+
+    public void setAuthorities(String authorities) {
+        this.authorities = authorities;
+    }
+
     //endregion
 }
 

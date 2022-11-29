@@ -1,14 +1,15 @@
 package foodWebsiteProject.model;
 import javax.validation.constraints.*;
 
-import net.bytebuddy.implementation.bind.annotation.Default;
-/*import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
-import org.springframework.security.core.userdetails.UserDetails;*/
+import org.springframework.security.core.userdetails.UserDetails;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
 
 
-public class User /*implements UserDetails*/{
+public class User implements UserDetails{
     @Size(max = 15)
     @Pattern(regexp = "[A-ZÀ-ÖØà-ÿa-z'-]{0,6}\\s[A-ZÀ-ÖØà-ÿa-z'-]{0,9}|[A-ZÀ-ÖØà-ÿa-z'-]{0,14}")
     @NotEmpty
@@ -38,7 +39,6 @@ public class User /*implements UserDetails*/{
 
     private Integer fidelityCard;
 
-
     private Boolean enabled;
     private Boolean accountNonExpired;
     private Boolean accountNonLocked;
@@ -47,7 +47,7 @@ public class User /*implements UserDetails*/{
     public User(){}
 
     //region security
-   /* @Override
+    @Override
     public Collection<GrantedAuthority> getAuthorities() {
         List<GrantedAuthority> grantedAuthorities = new ArrayList<>();
 
@@ -83,50 +83,13 @@ public class User /*implements UserDetails*/{
     public String getUsername() {
         return emailAddress;
     }
-    public void setUsername(String username) {
-        this.emailAddress = username;
-    }
     @Override
     public String getPassword() {
         return password;
     }
-    public void setPassword(String password) {
-        this.password = password;
-    }
-    public void setAuthorities(String authorities) {
-        this.authorities = authorities;
-    }
-    public Boolean getAccountNonExpired() {
-        return accountNonExpired;
-    }
-    public void setAccountNonExpired(Boolean accountNonExpired) {
-        this.accountNonExpired = accountNonExpired;
-    }
-    public Boolean getAccountNonLocked() {
-        return accountNonLocked;
-    }
-    public void setAccountNonLocked(Boolean accountNonLocked) {
-        this.accountNonLocked = accountNonLocked;
-    }
-    public Boolean getCredentialsNonExpired() {
-        return credentialsNonExpired;
-    }
-    public void setCredentialsNonExpired(Boolean credentialsNonExpired) {
-        this.credentialsNonExpired = credentialsNonExpired;
-    }
-    public Boolean getEnabled() {
-        return enabled;
-    }
-    public void setEnabled(Boolean enabled) {
-        this.enabled = enabled;
-    }
-*/
     //endregion
     //region getters
 
-    public String getPassword() {
-        return password;
-    }
     public String getFirstName() {
         return firstName;
     }
@@ -150,9 +113,28 @@ public class User /*implements UserDetails*/{
     public Integer getFidelityCard() {
         return fidelityCard;
     }
+
+    public Boolean getEnabled() {
+        return enabled;
+    }
+
+    public Boolean getAccountNonExpired() {
+        return accountNonExpired;
+    }
+
+    public Boolean getAccountNonLocked() {
+        return accountNonLocked;
+    }
+
+    public Boolean getCredentialsNonExpired() {
+        return credentialsNonExpired;
+    }
+
+
     //endregion
 
     //region setters
+
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
@@ -177,9 +159,31 @@ public class User /*implements UserDetails*/{
         this.fidelityCard = fidelityCard;
     }
 
-    public String setPassword(String password) {
-        return this.password = password;
+    public void setPassword(String password) {
+        this.password = password;
     }
+
+    public void setEnabled(Boolean enabled) {
+        this.enabled = enabled;
+    }
+
+    public void setAccountNonExpired(Boolean accountNonExpired) {
+        this.accountNonExpired = accountNonExpired;
+    }
+
+    public void setAccountNonLocked(Boolean accountNonLocked) {
+        this.accountNonLocked = accountNonLocked;
+    }
+
+    public void setCredentialsNonExpired(Boolean credentialsNonExpired) {
+        this.credentialsNonExpired = credentialsNonExpired;
+    }
+
+    public void setAuthorities(String authorities) {
+        this.authorities = authorities;
+    }
+
+
     //endregion
 
 }

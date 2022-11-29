@@ -36,6 +36,7 @@ public class InscriptionController {
         if(userDAO.isAlreadyCreated(user)) {
             errors.rejectValue("emailAddress","userEmail");
         }
+        System.out.println(errors);
         if(!errors.hasErrors()){
             user.setFidelityCard(0);
             if(user.getNumberPhone().equals("")){

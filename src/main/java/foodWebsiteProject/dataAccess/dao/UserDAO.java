@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 
-@Transactional
+
 @Service
 public class UserDAO implements UserDataAccess{
 
@@ -22,7 +22,7 @@ public class UserDAO implements UserDataAccess{
         this.userConverter = userConverter;
         this.userRepository = userRepository;
     }
-
+    @Transactional
     public User save(User user){
         UserEntity userEntity = userConverter.userModelToUserEntity(user);
         userEntity = userRepository.save(userEntity);
@@ -31,5 +31,10 @@ public class UserDAO implements UserDataAccess{
 
     public Boolean isAlreadyCreated(User user){
         return userRepository.existsById(user.getEmailAddress());
+    }
+
+    public User getUserByEmailAddress(String emailAddress){
+        UserEntity userEntity = userRepository.findUserEntityByEmailAddress(emailAddress);
+        return userConverter.userEntityToUserModel(userEntity);
     }
 }
