@@ -1,9 +1,11 @@
+/*  main properties */
 *{
     margin:0;
     padding:0;
     font-family: 'Montserrat', sans-serif;
 }
 
+/*  position top banner */
 header{
     width: 100%;
     background-position: center;
@@ -11,24 +13,15 @@ header{
     position: relative;
 }
 
+/* main properties body */
 body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
 }
 
-#mainContent{
-    flex: 1;
-}
 
-footer{
-    background-color: lightgray;
-    bottom:0;
-    width: 100%;
-    height: 100px;
-    opacity: 50%;
-}
-
+/* main properties navigation bar */
 nav{
     height: 150px;
     display: flex;
@@ -37,33 +30,33 @@ nav{
     align-items: center;
     background-color: orange;
 }
-header nav a img{
+
+/* logo */
+#top-container img{
     width: 100px;
 }
+/* navigation bar container items */
 .nav-links{
     flex:1;
     text-align: right;
 }
+
+/* navigation bar items */
 .nav-links ul li{
     list-style-type: none;
     display: inline-block; 
     padding: 8px 12px;
     position: relative;
 }
+
+/* main styles navigation items */
 .nav-links ul li a,.nav-links ul li button {
     color: white;
     text-decoration: none;
     font-size: 18px;
 }
-.nav-links ul li input{
-    padding: 6px;
-    margin-top: 8px;
-    margin-right: 16px;
-    font-size: 17px;
-    border-radius: 16px;
-    border-color: floralwhite;
-}
 
+/* underline nav bar items */
 .nav-links ul li a::after{
     content:'';
     width: 0%;
@@ -74,16 +67,18 @@ header nav a img{
     transition: 0.5s;
 }
 
+/* underline nav bar items animation */
 .nav-links ul li a:hover::after{
     width: 100%;
 }
 
+/* banner personnalized message */
 #userBanner{
     background-color: darkorange;
     overflow: hidden;
 }
 
-/* le bloc défilant */
+/* personnalized message */
 #userBanner > :first-child {
     display: inline-block;
     padding-left: 100%;
@@ -93,7 +88,7 @@ header nav a img{
     animation-duration: 45s;
     animation-iteration-count: infinite;
 }
-
+/* message animation */
 @keyframes defilement-rtl {
     0% {
         transform: translate3d(0,0,0);
@@ -103,15 +98,17 @@ header nav a img{
     }
 }
 
-.flag{
+/* custom flags  */
+#top-container .flag{
     height: 45%;
     width: 45%;
 }
+/* center everything in dropdown  */
 .dropdown-menu li{
     text-align: center;
 }
 
-
+/* change bootstraps properties  */
 a.dropdown-item, a.dropdown-item:hover{
     background-color: orange;
 }

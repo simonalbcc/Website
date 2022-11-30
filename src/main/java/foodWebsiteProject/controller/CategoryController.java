@@ -11,7 +11,10 @@ public class CategoryController {
 
     @RequestMapping(method = RequestMethod.GET)
     public String home (Model model){
-        model.addAttribute("title", "Menu");
+
+        model.addAttribute("tabTitle", "Menu");
+        model.addAttribute("cssName", "category");
+
         return "integrated:category";
     }
 }

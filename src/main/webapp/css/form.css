@@ -1,4 +1,4 @@
-#container {
+#middle-container {
     margin: auto;
     padding-top: 5%;
     height: 50%;
@@ -6,9 +6,9 @@
     display: flex;
     align-items: stretch;
 }
-#form {
+#form-container {
     flex:2
 }
-#container img {
+#middle-container img {
     height: 300px;
 }

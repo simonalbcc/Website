@@ -1,4 +1,5 @@
-#container{
+/* position middle-container & properties */
+#middle-container{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -8,7 +9,8 @@
     height: 50%;
     width: 50%;
 }
-#contact{
+/* style text */
+#contact-text{
     background-color: papayawhip ;
     border: antiquewhite 3px solid;
     padding: 5%;

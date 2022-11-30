@@ -10,7 +10,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class WelcomeController {
     @RequestMapping(method = RequestMethod.GET)
     public String home (Model model){
-        model.addAttribute("title", "Bienvenue");
+
+        model.addAttribute("tabTitle", "Bienvenue");
+        model.addAttribute("cssName", "welcome");
+
         return "integrated:welcome";
     }
 }

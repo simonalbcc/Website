@@ -11,7 +11,9 @@ public class CartController {
 
     @RequestMapping(method = RequestMethod.GET)
     public String home(Model model){
-        model.addAttribute("title", "panier");
+
+        model.addAttribute("tabTitle", "panier");
+
         return "integrated:cart";
     }
 }

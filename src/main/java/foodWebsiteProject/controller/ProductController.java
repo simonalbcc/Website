@@ -23,10 +23,13 @@ public class ProductController {
 
     @RequestMapping(value = "/{category}", method = RequestMethod.GET)
     public String getProducts (@PathVariable("category") Integer categoryId, Model model){
+
         List<Product> products = productDAO.getAllProductsByCategoryId(categoryId);
 
         model.addAttribute("products", products);
-        model.addAttribute("title", "Produits");
+        model.addAttribute("tabTitle", "Produits");
+        model.addAttribute("cssName", "product");
+
         return "integrated:products";
     }
 }

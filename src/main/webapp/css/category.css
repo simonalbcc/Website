@@ -1,12 +1,15 @@
-#container{
+/* position middle-container */
+#middle-container{
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100%;
     margin-top: 5%;
+    padding: 10%;
 }
 
-#container img{
+/* centering image */
+#middle-container img{
     margin-right: 30px;
     margin-left : 30px;
 }

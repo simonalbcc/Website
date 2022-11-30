@@ -27,13 +27,17 @@ public class InscriptionController {
 
     @RequestMapping (method = RequestMethod.GET)
     public String home(Model model){
+
         model.addAttribute("user", new User());
-        model.addAttribute("title", "Inscription");
+        model.addAttribute("tabTitle", "Inscription");
+        model.addAttribute("cssName", "form");
+
         return "integrated:formInscription";
     }
 
     @RequestMapping(value = "/send", method = RequestMethod.POST)
     public String getFormData(@Valid @ModelAttribute(value="user") User user, final BindingResult errors){
+
         if(userDAO.isAlreadyCreated(user)) {
             errors.rejectValue("emailAddress","userEmail");
         }
@@ -54,6 +58,7 @@ public class InscriptionController {
             userDAO.save(user);
             return "redirect:/welcome";
         }
+
         return "integrated:formInscription";
     }
 }
