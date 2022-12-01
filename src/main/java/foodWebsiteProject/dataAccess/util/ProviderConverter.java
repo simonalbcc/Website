@@ -2,9 +2,11 @@ package foodWebsiteProject.dataAccess.util;
 
 import foodWebsiteProject.dataAccess.entity.CategoryEntity;
 import foodWebsiteProject.dataAccess.entity.ProductEntity;
+import foodWebsiteProject.dataAccess.entity.TranslationEntity;
 import foodWebsiteProject.dataAccess.entity.UserEntity;
 import foodWebsiteProject.model.Category;
 import foodWebsiteProject.model.Product;
+import foodWebsiteProject.model.Translation;
 import foodWebsiteProject.model.User;
 import org.dozer.DozerBeanMapper;
 import org.springframework.stereotype.Component;
@@ -45,17 +47,14 @@ public class ProviderConverter {
         return user;
     }
 
-
-    public CategoryEntity categoryModelToCategoryEntity(Category category){
-        return mapper.map(category, CategoryEntity.class);
-    }
     public Category categoryEntityToCategoryModel(CategoryEntity categoryEntity){
         return mapper.map(categoryEntity, Category.class);
     }
 
-    public ProductEntity productModelToProductEntity(Product product){
-        return mapper.map(product, ProductEntity.class);
+    public Translation translationEntityToTranslationModel(TranslationEntity translationEntity){
+        return mapper.map(translationEntity, Translation.class);
     }
+
     public Product productEntityToProductModel(ProductEntity productEntity){
         Product product = new Product();
         product.setCategory(productEntity.getCategory().getId()); // pb

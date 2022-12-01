@@ -1,20 +1,21 @@
 package foodWebsiteProject.model;
 
 public class Translation {
-    private String name;
+
     private Integer id;
+    private String categoryName;
 
     public Translation() {}
 
-    public String getName() {
-        return name;
+    public String getCategoryName() {
+        return categoryName;
     }
     public Integer getId() {
         return id;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setCategoryName(String categoryName) {
+        this.categoryName = categoryName;
     }
     public void setId(Integer id) {
         this.id = id;
