@@ -11,7 +11,7 @@
 
         <!-- button  -->
         <div>
-            <a class="btn btn-light" href='<spring:url value="/contact"/>'><spring:message code="aboutUsButton"/></a>
+            <a class="btn btn-light btn-lg" href='<spring:url value="/contact"/>'><spring:message code="aboutUsButton"/></a>
         </div>
 
     </div>

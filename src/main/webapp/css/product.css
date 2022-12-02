@@ -13,8 +13,6 @@
     padding-bottom: 20px;
     letter-spacing: 0.02em;
     color: orange;
-    text-shadow:
-    2px 3px 0px #515151;
 }
 
 #products #container{
@@ -70,11 +68,15 @@
     font-size: 18px;
     position: fixed;
     bottom: 0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
 }
 
 .card a:hover {
     opacity: 0.7;
-    background-color: darkorange;
+    background-color: white;
+    color:darkorange;
+    border: 1px solid darkorange;
 }
 
 .card img {

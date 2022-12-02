@@ -8,5 +8,6 @@ import java.util.ArrayList;
 @Repository
 public interface ProductRepository extends JpaRepository<ProductEntity,Integer> {
     ArrayList<ProductEntity> findProductEntitiesByCategoryId (Integer id);
+    ProductEntity findProductEntityById(Integer id);
 
 }

@@ -11,7 +11,7 @@ import foodWebsiteProject.model.User;
 import org.dozer.DozerBeanMapper;
 import org.springframework.stereotype.Component;
 
-import javax.swing.*;
+import java.util.Optional;
 
 @Component
 public class ProviderConverter {
