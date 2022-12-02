@@ -29,6 +29,7 @@
         </spring:url>
     </section>
 
+
     <!-- tab title -->
     <title>${tabTitle}</title>
 
@@ -48,7 +49,7 @@
                 </a>
 
                 <!-- shop name -->
-                <h1 style="color:white"><spring:message code ="shopName" /></h1>
+                <h1><spring:message code ="shopName" /></h1>
 
                 <!-- navigation bar -->
                 <div class="nav-links">
@@ -106,10 +107,9 @@
         </section>
 
         <!-- footer -->
-        <div class = "card-footer text-muted fixed-bottom p-3 bg-light bg-gradient text-white">
-            <div>
-                <p><spring:message code="contactLabel"/></p>
-            </div>
+        <div id = "spacer"></div>
+        <div id = "footer-container">
+            <p><spring:message code="contactLabel"/></p>
         </div>
     </body>
 <!-- ========================= END SECTION BODY ========================= -->

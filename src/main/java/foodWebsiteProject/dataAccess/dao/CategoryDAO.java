@@ -1,16 +1,12 @@
 package foodWebsiteProject.dataAccess.dao;
 
-import foodWebsiteProject.dataAccess.entity.ProductEntity;
 import foodWebsiteProject.dataAccess.repository.CategoryRepository;
 import foodWebsiteProject.dataAccess.util.ProviderConverter;
-import foodWebsiteProject.model.Product;
-import foodWebsiteProject.model.Translation;
+import foodWebsiteProject.model.Category;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.stereotype.Service;
 import javax.transaction.Transactional;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.stream.Collectors;
 
 @Transactional
@@ -24,4 +20,11 @@ public class CategoryDAO implements CategoryDataAccess {
         this.categoryRepository = categoryRepository;
         this.categoryConverter = categoryConverter;
     }
+
+    public ArrayList<Category> findAllCategories(){
+        return categoryRepository.findAll()
+                .stream().map(categoryEntity -> categoryConverter.categoryEntityToCategoryModel(categoryEntity))
+                .collect(Collectors.toCollection(ArrayList :: new));
+    }
+
 }

@@ -2,6 +2,7 @@ package foodWebsiteProject.dataAccess.dao;
 
 import foodWebsiteProject.dataAccess.repository.TranslationRepository;
 import foodWebsiteProject.dataAccess.util.ProviderConverter;
+import foodWebsiteProject.dataAccess.util.Utils;
 import foodWebsiteProject.model.Language;
 import foodWebsiteProject.model.Translation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,19 +24,13 @@ public class TranslationDAO implements TranslationDataAccess{
         this.translationConverter = translationConverter;
     }
 
-    public ArrayList<Translation> getAllCategories() {
-        int idLanguage;
-        switch (LocaleContextHolder.getLocale().getLanguage()){
-            case "en":
-                idLanguage = 1; break;
-            case "fr":
-                idLanguage = 2; break;
-            default:
-                idLanguage = 0; break;
-        }
-
-        return translationRepository.findTranslationEntitiesByLanguageId(idLanguage)
+    public ArrayList<Translation> getAllCategories(Integer id) {
+        return translationRepository.findTranslationEntitiesByLanguageId(id)
                 .stream().map(translationEntity -> translationConverter.translationEntityToTranslationModel(translationEntity))
                 .collect(Collectors.toCollection(ArrayList :: new));
     }
+    public ArrayList<Translation> getAllCategories() {
+        return getAllCategories(Utils.getIdLanguage());
+    }
+
 }
