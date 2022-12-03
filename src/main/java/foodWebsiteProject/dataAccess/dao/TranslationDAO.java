@@ -32,5 +32,4 @@ public class TranslationDAO implements TranslationDataAccess{
     public ArrayList<Translation> getAllCategories() {
         return getAllCategories(Utils.getIdLanguage());
     }
-
 }

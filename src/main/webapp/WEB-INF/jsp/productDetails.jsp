@@ -6,17 +6,24 @@
 <!-- ========================= SECTION PRODUCT DETAIL CONTENT ========================= -->
 
 <section>
+    <!-- main container -->
     <div class="container">
+        <!-- card container -->
         <div class="card">
+            <!-- body -->
             <div class="card-body">
+                <!-- title -->
                 <h3 class="card-title">${product.getName()}</h3>
+                <!-- product -->
                 <div class="row">
                     <div class="col-lg-5 col-md-5 col-sm-6">
                         <div class="white-box text-center"><img id = "product-image" src='<spring:url value="/images/${categoryChosenInFrench}/${product.getName()}.png"/>' class="img-responsive"/></div>
                     </div>
+                    <!-- description -->
                     <div class="col-lg-7 col-md-5 col-sm-6">
                         <h4 class="box-title mt-5">Description:</h4>
                         <p>${product.getDescription()}</p>
+                        <!-- price -->
                         <h2 class="mt-4">${product.getPriceCatalog()}€</h2>
                         <button id="addButton" class="btn btn-light btn-rounded"><spring:message code="addCartButton"/></button>
                     </div>
@@ -24,13 +31,13 @@
             </div>
         </div>
     </div>
-
+    <!-- popup quantity-->
     <div id="addModal">
         <div id="modalContent">
             <span class="close">&times;</span>
-            <p>Veuillez choisir une quantité :</p>
+            <p><spring:message code="quantitySelectLabel"/></p>
             <input type="number" placeholder="1" step="1" min="0"/>
-            <button id="confirmButton" class="btn btn-light">Ajouter</button>
+            <button id="confirmButton" class="btn btn-light"><spring:message code="add"/></button> <!-- ce bouton gère l'ajout au panier -->
         </div>
     </div>
     <script>

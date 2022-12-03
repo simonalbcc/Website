@@ -30,7 +30,7 @@ public class ProductDetailsController {
         Product productChosen = productDAO.getProductById(idProduct);
         String categoryChosenInFrench = translationDAO.getAllCategories(2).stream().filter(t -> t.getCategory().getId() == productChosen.getCategory()).toList().get(0).getCategoryName();
 
-        model.addAttribute("tabTitle", productChosen.getName()+" détails");
+        model.addAttribute("tabTitle", productChosen.getName());
         model.addAttribute("cssName", "details");
         model.addAttribute("product", productChosen);
         model.addAttribute("categoryChosenInFrench", categoryChosenInFrench);

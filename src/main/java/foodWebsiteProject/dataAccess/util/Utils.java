@@ -13,8 +13,6 @@ public class Utils {
                 idLanguage = 1; break;
             case "fr":
                 idLanguage = 2; break;
-            default:
-                idLanguage = 0; break;
         }
         return idLanguage;
     }
