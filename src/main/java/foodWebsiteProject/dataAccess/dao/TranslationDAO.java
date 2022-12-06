@@ -24,12 +24,12 @@ public class TranslationDAO implements TranslationDataAccess{
         this.translationConverter = translationConverter;
     }
 
-    public ArrayList<Translation> getAllCategories(Integer id) {
+    public ArrayList<Translation> getAllCategoriesWithAnId(Integer id) {
         return translationRepository.findTranslationEntitiesByLanguageId(id)
                 .stream().map(translationEntity -> translationConverter.translationEntityToTranslationModel(translationEntity))
                 .collect(Collectors.toCollection(ArrayList :: new));
     }
     public ArrayList<Translation> getAllCategories() {
-        return getAllCategories(Utils.getIdLanguage());
+        return getAllCategoriesWithAnId(Utils.getIdLanguage());
     }
 }

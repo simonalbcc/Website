@@ -9,10 +9,10 @@ public class Product {
     private String size;
     private Float priceCatalog;
     private String description;
-    private Integer category;
+    private Category category;
 
     public Product(){}
-    public Product(Integer id, String name, String size, Float priceCatalog, String description, Integer category) {
+    public Product(Integer id, String name, String size, Float priceCatalog, String description, Category category) {
         this.id = id;
         this.name = name;
         this.size = size;
@@ -42,7 +42,7 @@ public class Product {
         return description;
     }
 
-    public Integer getCategory() {
+    public Category getCategory() {
         return category;
     }
     //endregion
@@ -68,7 +68,7 @@ public class Product {
         this.description = description;
     }
 
-    public void setCategory(Integer category) {
+    public void setCategory(Category category) {
         this.category = category;
     }
     //endregion

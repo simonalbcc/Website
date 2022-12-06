@@ -35,6 +35,9 @@ public class UserDAO implements UserDataAccess{
 
     public User getUserByEmailAddress(String emailAddress){
         UserEntity userEntity = userRepository.findUserEntityByEmailAddress(emailAddress);
-        return userConverter.userEntityToUserModel(userEntity);
+        if(userEntity != null){
+            return userConverter.userEntityToUserModel(userEntity);
+        }
+        return null;
     }
 }

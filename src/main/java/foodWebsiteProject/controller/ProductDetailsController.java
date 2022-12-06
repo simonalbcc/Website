@@ -4,6 +4,7 @@ import foodWebsiteProject.dataAccess.dao.ProductDAO;
 import foodWebsiteProject.dataAccess.dao.ProductDataAccess;
 import foodWebsiteProject.dataAccess.dao.TranslationDAO;
 import foodWebsiteProject.dataAccess.dao.TranslationDataAccess;
+import foodWebsiteProject.model.LineOrder;
 import foodWebsiteProject.model.Product;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -28,13 +29,15 @@ public class ProductDetailsController {
     @RequestMapping(value = "/{idProduct}", method = RequestMethod.GET)
     public String details (@PathVariable("idProduct") Integer idProduct, Model model){
         Product productChosen = productDAO.getProductById(idProduct);
-        String categoryChosenInFrench = translationDAO.getAllCategories(2).stream().filter(t -> t.getCategory().getId() == productChosen.getCategory()).toList().get(0).getCategoryName();
+        String categoryChosenInFrench = translationDAO.getAllCategoriesWithAnId(2).stream().filter(t -> t.getCategory().getId() == productChosen.getCategory().getId()).toList().get(0).getCategoryName();
 
         model.addAttribute("tabTitle", productChosen.getName());
         model.addAttribute("cssName", "details");
         model.addAttribute("product", productChosen);
         model.addAttribute("categoryChosenInFrench", categoryChosenInFrench);
+        model.addAttribute("lineOrder", new LineOrder());
 
         return "integrated:productDetails";
     }
+
 }

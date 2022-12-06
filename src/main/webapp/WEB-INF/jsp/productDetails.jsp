@@ -35,9 +35,16 @@
     <div id="addModal">
         <div id="modalContent">
             <span class="close">&times;</span>
-            <p><spring:message code="quantitySelectLabel"/></p>
-            <input type="number" placeholder="1" step="1" min="0"/>
-            <button id="confirmButton" class="btn btn-light"><spring:message code="add"/></button> <!-- ce bouton gère l'ajout au panier -->
+            <%--@elvariable id="lineOrder" type=""--%>
+            <form:form
+                    id="addToCartForm"
+                    action="/foodWebsite/cart/add/${idProduct}"
+                    method="POST"
+                    modelAttribute="lineOrder">
+                <form:label path="quantity"><spring:message code="quantitySelectLabel"/></form:label>
+                <form:input path="quantity" type="number" value="1" step="1" min="0"/>
+                <form:button id="confirmButton" class="btn btn-light"><spring:message code="add"/></form:button> <!-- ce bouton gère l'ajout au panier -->
+            </form:form>
         </div>
     </div>
     <script>

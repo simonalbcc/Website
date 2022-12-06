@@ -35,9 +35,6 @@ public class ProviderConverter {
     }
 
     public User userEntityToUserModel(UserEntity userEntity){
-        if(userEntity == null){
-            return null;
-        }
         User user = mapper.map(userEntity, User.class);
         user.setAccountNonExpired(userEntity.getNonExpired());
         user.setAccountNonLocked(userEntity.getNonLocked());
@@ -56,13 +53,6 @@ public class ProviderConverter {
     }
 
     public Product productEntityToProductModel(ProductEntity productEntity){
-        Product product = new Product();
-        product.setCategory(productEntity.getCategory().getId()); // pb
-        product.setId(productEntity.getId());
-        product.setDescription(productEntity.getDescription());
-        product.setName(productEntity.getName());
-        product.setSize(productEntity.getSize());
-        product.setPriceCatalog(productEntity.getPriceCatalog());
-        return product;
+        return mapper.map(productEntity, Product.class);
     }
 }

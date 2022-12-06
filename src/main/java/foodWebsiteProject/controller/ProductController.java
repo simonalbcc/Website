@@ -34,7 +34,7 @@ public class ProductController {
 
         List<Product> products = productDAO.getAllProductsByCategoryId(categoryId);
         String categoryChosen = translationDAO.getAllCategories().stream().filter(t -> t.getCategory().getId() == categoryId).toList().get(0).getCategoryName();
-        String categoryChosenInFrench = translationDAO.getAllCategories(2).stream().filter(t -> t.getCategory().getId() == categoryId).toList().get(0).getCategoryName();
+        String categoryChosenInFrench = translationDAO.getAllCategoriesWithAnId(2).stream().filter(t -> t.getCategory().getId() == categoryId).toList().get(0).getCategoryName();
 
         model.addAttribute("products", products);
         model.addAttribute("tabTitle", categoryChosen);
