@@ -47,6 +47,7 @@ public class CartController {
         ArrayList<String> categoriesChosenInFrench = translationDAO.getAllCategoriesWithAnId(2).stream().filter(t -> categoriesInCart.contains(t.getId())).map(t->t.getCategoryName()).collect(Collectors.toCollection(ArrayList :: new));
 
         model.addAttribute("tabTitle", "Panier");
+        model.addAttribute("cssName", "cart");
         model.addAttribute("cart", cart);
         model.addAttribute("lineOrder", new LineOrder());
         model.addAttribute("categoriesChosenInFrench", categoriesChosenInFrench);

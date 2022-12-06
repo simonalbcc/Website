@@ -1,3 +1,8 @@
+/* price section */
+.col-md-3 col-lg-2 col-xl-2 offset-lg-1{
+    padding: 50px;
+}
+
 /* The Modal (background) */
 #addModal {
     display: none; /* Hidden by default */
