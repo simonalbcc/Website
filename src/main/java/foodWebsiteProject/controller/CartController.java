@@ -37,14 +37,12 @@ public class CartController {
         this.translationDAO = translationDAO;
     }
 
-    // afficher le panier
     @RequestMapping(method = RequestMethod.GET)
     public String getCart(Model model,
                           @ModelAttribute(value= Constants.CURRENT_CART) HashMap<Integer, LineOrder> cart,
                           final BindingResult errors){
 
-        ArrayList<Integer> categoriesInCart = cart.values().stream().map(v -> v.getProduct().getCategory().getId()).collect(Collectors.toCollection(ArrayList :: new));
-        ArrayList<String> categoriesChosenInFrench = translationDAO.getAllCategoriesWithAnId(2).stream().filter(t -> categoriesInCart.contains(t.getCategory().getId())).map(t->t.getCategoryName()).collect(Collectors.toCollection(ArrayList :: new));
+        ArrayList<String> categoriesChosenInFrench = translationDAO.getAllCategoriesWithAnId(2).stream().map(t->t.getCategoryName()).collect(Collectors.toCollection(ArrayList :: new));
         System.out.println(categoriesChosenInFrench);
         model.addAttribute("tabTitle", "Panier");
         model.addAttribute("cssName", "cart");
@@ -55,7 +53,6 @@ public class CartController {
         return "integrated:cart";
     }
 
-    // ajout dans le panier
     @RequestMapping(value="/add/{idProduct}", method = RequestMethod.POST)
     public String addProduct(Model model,
                              @ModelAttribute(value= Constants.CURRENT_CART)HashMap<Integer, LineOrder> cart,
@@ -75,9 +72,9 @@ public class CartController {
             System.out.println("Produit : " + cart.get(idProduct).getProduct().getName());
             System.out.println("Quantité : " + cart.get(idProduct).getQuantity());
             System.out.println("taille hashmap : " + cart.size());
-            return "redirect:/menu";
+            return "redirect:/products/" + cart.get(idProduct).getProduct().getCategory().getId();
         }
-        return "redirect:/category";
+        return "redirect:/detailsProduct/" + idProduct;
     }
 
     @RequestMapping(value="/update/{idProduct}", method = RequestMethod.POST)

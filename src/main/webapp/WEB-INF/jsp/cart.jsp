@@ -24,11 +24,11 @@
                         <p class="lead fw-normal mb-2"><spring:message code="quantity"/> : ${lineOrder.getValue().getQuantity()}</p>
                     </div>
                     <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
-                        <button id="modifyButton" class="btn btn-light btn-rounded"><spring:message code="modifyButton"/></button>
+                        <button class="btn btn-light btn-rounded modifyButtons"><spring:message code="modifyButton"/></button>
                     </div>
                     <!-- price -->
                     <div class="col-md-1 col-lg-2 col-xl-2">
-                        <h5 class="mb-0"><spring:message code="price"/> : ${lineOrder.getValue().getRealPrice()}</h5>
+                        <h5 class="mb-0"><spring:message code="price"/> : ${lineOrder.getValue().getQuantity() * lineOrder.getValue().getRealPrice()}€</h5>
                     </div>
 
                     <!-- quantity remover -->
@@ -47,48 +47,58 @@
             </div>
         </div>
         <!-- popup quantity-->
-        <div id="addModal">
-            <div id="modalContent">
+        <div class ="addModal">
+            <div class="modalContent">
                 <span class="close">&times;</span>
                     <%--@elvariable id="lineOrder" type=""--%>
                 <form:form
-                        id="modifyQuantityForm"
                         action="/foodWebsite/cart/update/${lineOrder.getValue().getProduct().getId()}"
                         method="POST"
                         modelAttribute="lineOrder">
                     <form:label path="quantity"><spring:message code="quantitySelectLabel"/></form:label>
                     <form:input path="quantity" type="number" value="${lineOrder.getValue().getQuantity()}" step="1" min="0"/>
-                    <form:button id="confirmButton" class="btn btn-light"><spring:message code="add"/></form:button> <!-- ce bouton gère l'ajout au panier -->
+                    <form:button class="btn btn-light"><spring:message code="add"/></form:button>
                 </form:form>
             </div>
         </div>
     </c:forEach>
+
+    <div>
+        <p>Total :</p>
+        <button><spring:message code="buyButton"/></button>
+    </div>
+
 </section>
 <script>
     // Get the modal
-    let modal = document.getElementById("addModal");
+    let modals = document.getElementsByClassName("addModal");
 
     // Get the button that opens the modal
-    let btn = document.getElementById("modifyButton");
+    let btns = document.getElementsByClassName("btn btn-light btn-rounded modifyButtons");
 
     // Get the <span> element that closes the modal
-    let span = document.getElementsByClassName("close")[0];
+    let spans = document.getElementsByClassName("close");
 
+    for (let iBtn in btns) {
+        btns[iBtn].onclick = function () {
+            modals[iBtn].style.display = "block";
+        }
+        spans[iBtn].onclick = function() {
+            modals[iBtn].style.display = "none";
+        }
+
+    }
     // When the user clicks on the button, open the modal
-    btn.onclick = function () {
-        modal.style.display = "block";
-    }
-
     // When the user clicks on <span> (x), close the modal
-    span.onclick = function() {
-        modal.style.display = "none";
-    }
 
     // When the user clicks anywhere outside of the modal, close it
     window.onclick = function(event) {
-        if (event.target == modal) {
-            modal.style.display = "none";
+        for(let modal of modals) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
         }
     }
+
 </script>
 <!-- ========================= END SECTION CONTENT ========================= -->

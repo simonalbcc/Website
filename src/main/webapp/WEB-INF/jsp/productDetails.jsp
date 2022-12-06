@@ -42,7 +42,8 @@
                     method="POST"
                     modelAttribute="lineOrder">
                 <form:label path="quantity"><spring:message code="quantitySelectLabel"/></form:label>
-                <form:input path="quantity" type="number" value="1" step="1" min="0"/>
+                <form:input path="quantity" type="number" value="1" step="1" min="1"/>
+                <form:errors path="quantity"/>
                 <form:button id="confirmButton" class="btn btn-light"><spring:message code="add"/></form:button> <!-- ce bouton gère l'ajout au panier -->
             </form:form>
         </div>

@@ -1,8 +1,15 @@
 package foodWebsiteProject.model;
 
+import javax.validation.constraints.Min;
+
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+
 public class LineOrder {
     private Integer idLine;
     private Float realPrice;
+    @Min(value = 0)
+    @NotNull
     private Integer quantity;
     private Product product;
     private User orderUser;

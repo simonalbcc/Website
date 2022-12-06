@@ -13,7 +13,7 @@
 }
 
 /* The Modal (background) */
-#addModal {
+.addModal {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
@@ -27,7 +27,7 @@
 }
 
 /* Modal Content/Box */
-#modalContent {
+.modalContent {
     border-radius: 10px;
     margin: 15% auto; /* 15% from the top and centered */
     background-color: white;

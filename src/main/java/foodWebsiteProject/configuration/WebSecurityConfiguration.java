@@ -31,8 +31,8 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
         http
                 .authorizeRequests() // We define the authorization here
                 .antMatchers(AUTHORIZED_REQUESTS_ANYBODY).permitAll() // For the request to the index page, any user has access
-                .anyRequest().authenticated() // For all the other requests, the user needs to be authenticated
-
+                //.anyRequest().authenticated() // For all the other requests, the user needs to be authenticated
+                .anyRequest().permitAll()
                 .and()
                 .formLogin() // We define the login part here.
                 .successHandler(new SavedRequestAwareAuthenticationSuccessHandler()) // provided by spring to redirect to the last request
