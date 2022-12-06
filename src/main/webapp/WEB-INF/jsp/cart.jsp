@@ -10,28 +10,38 @@
             <div class="card-body p-4">
                 <div class="row d-flex justify-content-between align-items-center">
                     <!-- image product -->
-                    <div class="col-md-2 col-lg-2 col-xl-2">
-                        <img id = "product-image" src='<spring:url value="/images/${categoriesChosenInFrench[0]}/${lineOrder.getValue().getProduct().getName()}.png"/>' class="img-responsive"/>
+                    <div class="col-md-2">
+                        <img class="product-image" src='<spring:url value="/images/${categoriesChosenInFrench[lineOrder.getValue().getProduct().getCategory().getId()-1]}/${lineOrder.getValue().getProduct().getName()}.png"/>' class="img-responsive"/>
                     </div>
 
                     <!-- name -->
-                    <div class="col-md-3 col-lg-3 col-xl-3">
+                    <div class="col-md-2 col-lg-3 col-xl-3">
                         <p class="lead fw-normal mb-2">${lineOrder.getValue().getProduct().getName()}</p>
                     </div>
 
                     <!-- quantity manager -->
                     <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
-                        <p><spring:message code="quantity"/> : ${lineOrder.getValue().getQuantity()}</p>
-                        <button id="modifyButton" class="btn btn-light btn-rounded">Modifier</button>
+                        <p class="lead fw-normal mb-2"><spring:message code="quantity"/> : ${lineOrder.getValue().getQuantity()}</p>
+                    </div>
+                    <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
+                        <button id="modifyButton" class="btn btn-light btn-rounded"><spring:message code="modifyButton"/></button>
                     </div>
                     <!-- price -->
-                    <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
+                    <div class="col-md-1 col-lg-2 col-xl-2">
                         <h5 class="mb-0"><spring:message code="price"/> : ${lineOrder.getValue().getRealPrice()}</h5>
                     </div>
 
                     <!-- quantity remover -->
-                    <div class="col-md-1 col-lg-1 col-xl-1 text-end">
-                        <!-- TODO Image poubelle :) -->
+                    <div class="col-md-1 col-lg-1 col-xl-1">
+                        <form:form
+                                action="/foodWebsite/cart/delete/${lineOrder.getValue().getProduct().getId()}"
+                                method="POST"
+                                modelAttribute="lineOrder">
+                            <form:button id="deleteButton">
+                                <img class="bin" src='<spring:url value="/images/Logos/bin.png"/>'/>
+                            </form:button>
+
+                        </form:form>
                     </div>
                 </div>
             </div>
@@ -47,7 +57,7 @@
                         method="POST"
                         modelAttribute="lineOrder">
                     <form:label path="quantity"><spring:message code="quantitySelectLabel"/></form:label>
-                    <form:input path="quantity" type="number" value="5" step="1" min="0"/>
+                    <form:input path="quantity" type="number" value="${lineOrder.getValue().getQuantity()}" step="1" min="0"/>
                     <form:button id="confirmButton" class="btn btn-light"><spring:message code="add"/></form:button> <!-- ce bouton gère l'ajout au panier -->
                 </form:form>
             </div>

@@ -44,8 +44,8 @@ public class CartController {
                           final BindingResult errors){
 
         ArrayList<Integer> categoriesInCart = cart.values().stream().map(v -> v.getProduct().getCategory().getId()).collect(Collectors.toCollection(ArrayList :: new));
-        ArrayList<String> categoriesChosenInFrench = translationDAO.getAllCategoriesWithAnId(2).stream().filter(t -> categoriesInCart.contains(t.getId())).map(t->t.getCategoryName()).collect(Collectors.toCollection(ArrayList :: new));
-
+        ArrayList<String> categoriesChosenInFrench = translationDAO.getAllCategoriesWithAnId(2).stream().filter(t -> categoriesInCart.contains(t.getCategory().getId())).map(t->t.getCategoryName()).collect(Collectors.toCollection(ArrayList :: new));
+        System.out.println(categoriesChosenInFrench);
         model.addAttribute("tabTitle", "Panier");
         model.addAttribute("cssName", "cart");
         model.addAttribute("cart", cart);
@@ -73,7 +73,7 @@ public class CartController {
                 cart.put(idProduct, lineOrder);
             }
             System.out.println("Produit : " + cart.get(idProduct).getProduct().getName());
-            System.out.println("Quantitée : " + cart.get(idProduct).getQuantity());
+            System.out.println("Quantité : " + cart.get(idProduct).getQuantity());
             System.out.println("taille hashmap : " + cart.size());
             return "redirect:/menu";
         }
@@ -86,7 +86,6 @@ public class CartController {
                                  @PathVariable("idProduct") Integer idProduct,
                                  @ModelAttribute("lineOrder") LineOrder lineOrder,
                                  final BindingResult errors){
-        System.out.println("je passe dans update");
         if(!errors.hasErrors()){
             if(lineOrder.getQuantity() > 0){
                 cart.get(idProduct).setQuantity(lineOrder.getQuantity());
@@ -96,5 +95,17 @@ public class CartController {
             return "redirect:/cart";
         }
         return "redirect:/welcome";
+    }
+
+    @RequestMapping(value="/delete/{idProduct}", method = RequestMethod.POST)
+    public String deleteProduct(Model model,
+                                @ModelAttribute(value= Constants.CURRENT_CART)HashMap<Integer, LineOrder> cart,
+                                @PathVariable("idProduct") Integer idProduct,
+                                @ModelAttribute("lineOrder") LineOrder lineOrder,
+                                final BindingResult errors){
+        if(!errors.hasErrors()){
+            cart.remove(idProduct);
+        }
+        return "redirect:/cart";
     }
 }

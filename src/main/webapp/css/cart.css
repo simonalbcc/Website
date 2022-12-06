@@ -1,6 +1,15 @@
 /* price section */
-.col-md-3 col-lg-2 col-xl-2 offset-lg-1{
-    padding: 50px;
+.product-image {
+    width: 90%;
+}
+
+.bin {
+    width: 50px;
+}
+
+#deleteButton {
+    border: 0;
+    background-color: white;
 }
 
 /* The Modal (background) */
