@@ -15,7 +15,7 @@ public class WelcomeController {
     }
 
     @RequestMapping(method = RequestMethod.GET)
-    public String home (Model model){
+    public String getHomePage (Model model){
 
         model.addAttribute("tabTitle", "Bienvenue");
         model.addAttribute("cssName", "welcome");

@@ -26,7 +26,7 @@ public class InscriptionController {
     }
 
     @RequestMapping (method = RequestMethod.GET)
-    public String home(Model model){
+    public String getInscriptionPage(Model model){
 
         model.addAttribute("user", new User());
         model.addAttribute("tabTitle", "Inscription");

@@ -15,7 +15,7 @@ public class ContactController {
     }
 
     @RequestMapping(method = RequestMethod.GET)
-    public String home (Model model){
+    public String getContactPage (Model model){
 
         model.addAttribute("tabTitle", "Contact");
         model.addAttribute("cssName", "contact");

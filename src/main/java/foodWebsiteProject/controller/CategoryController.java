@@ -28,7 +28,7 @@ public class CategoryController {
     }
 
     @RequestMapping(method = RequestMethod.GET)
-    public String getCategoryMenu (Model model){
+    public String getCategoryPage (Model model){
 
         ArrayList<Translation> translations = translationDAO.getAllCategories();
         ArrayList<Category> categories = categoryDAO.findAllCategories();
