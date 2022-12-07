@@ -12,6 +12,7 @@ import javax.transaction.Transactional;
 
 
 @Service
+@Transactional
 public class UserDAO implements UserDataAccess{
 
     private UserRepository userRepository;
@@ -22,7 +23,7 @@ public class UserDAO implements UserDataAccess{
         this.userConverter = userConverter;
         this.userRepository = userRepository;
     }
-    @Transactional
+
     public User save(User user){
         UserEntity userEntity = userConverter.userModelToUserEntity(user);
         userEntity = userRepository.save(userEntity);

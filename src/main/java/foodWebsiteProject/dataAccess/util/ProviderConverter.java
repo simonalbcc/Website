@@ -1,16 +1,11 @@
 package foodWebsiteProject.dataAccess.util;
 
-import foodWebsiteProject.dataAccess.entity.CategoryEntity;
-import foodWebsiteProject.dataAccess.entity.ProductEntity;
-import foodWebsiteProject.dataAccess.entity.TranslationEntity;
-import foodWebsiteProject.dataAccess.entity.UserEntity;
-import foodWebsiteProject.model.Category;
-import foodWebsiteProject.model.Product;
-import foodWebsiteProject.model.Translation;
-import foodWebsiteProject.model.User;
+import foodWebsiteProject.dataAccess.entity.*;
+import foodWebsiteProject.model.*;
 import org.dozer.DozerBeanMapper;
 import org.springframework.stereotype.Component;
 
+import javax.sound.sampled.Line;
 import java.util.Optional;
 
 @Component
@@ -44,11 +39,27 @@ public class ProviderConverter {
         return user;
     }
 
+    public Order orderEntityToOrderModel(OrderEntity orderEntity){
+        return mapper.map(orderEntity, Order.class);
+    }
+    public OrderEntity orderModelToOrderEntity(Order order){
+        return mapper.map(order, OrderEntity.class);
+    }
+
+
+    public LineOrder lineOrderEntityToLineOrderModel(LineOrderEntity lineOrderEntity){
+        return mapper.map(lineOrderEntity, LineOrder.class);
+    }
+    public LineOrderEntity lineOrderModelToLineOrderEntity(LineOrder lineOrderModel){
+        return mapper.map(lineOrderModel, LineOrderEntity.class);
+    }
+
     public Category categoryEntityToCategoryModel(CategoryEntity categoryEntity){
         return mapper.map(categoryEntity, Category.class);
     }
 
     public Translation translationEntityToTranslationModel(TranslationEntity translationEntity){
+
         return mapper.map(translationEntity, Translation.class);
     }
 

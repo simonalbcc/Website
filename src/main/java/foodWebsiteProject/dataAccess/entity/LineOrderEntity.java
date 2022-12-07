@@ -11,10 +11,14 @@ public class LineOrderEntity {
 
     @Id
     @Column(name="id_line")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idLine;
 
     @Column(name="real_price")
     private Float realPrice;
+
+    @Column(name ="quantity")
+    private Integer quantity;
 
     @JoinColumn(name="product", referencedColumnName = "id")
     @ManyToOne
@@ -44,6 +48,11 @@ public class LineOrderEntity {
     public OrderEntity getOrder() {
         return order;
     }
+
+    public Integer getQuantity() {
+        return quantity;
+    }
+
     //endregion
 
     //region setter
@@ -61,6 +70,10 @@ public class LineOrderEntity {
 
     public void setOrder(OrderEntity order) {
         this.order = order;
+    }
+
+    public void setQuantity(Integer quantity) {
+        this.quantity = quantity;
     }
     //endregion
 }
