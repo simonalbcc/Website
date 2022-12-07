@@ -6,12 +6,16 @@ import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
 public class LineOrder {
+
     private Integer idLine;
-    private Float realPrice;
-    @Min(value = 0)
+
+    private Double realPrice;
+    @Min(value = 1)
     @NotNull
     private Integer quantity;
+
     private Product product;
+
     private User orderUser;
 
     public LineOrder(){
@@ -23,7 +27,7 @@ public class LineOrder {
         return idLine;
     }
 
-    public Float getRealPrice() {
+    public Double getRealPrice() {
         return realPrice;
     }
 
@@ -44,7 +48,7 @@ public class LineOrder {
         this.idLine = idLine;
     }
 
-    public void setRealPrice(Float realPrice) {
+    public void setRealPrice(Double realPrice) {
         this.realPrice = realPrice;
     }
 

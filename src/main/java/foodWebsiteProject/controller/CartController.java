@@ -43,13 +43,14 @@ public class CartController {
                           final BindingResult errors){
 
         ArrayList<String> categoriesChosenInFrench = translationDAO.getAllCategoriesWithAnId(2).stream().map(t->t.getCategoryName()).collect(Collectors.toCollection(ArrayList :: new));
-        System.out.println(categoriesChosenInFrench);
+        Double totalPrice = cart.values().stream().mapToDouble(p -> p.getRealPrice() * p.getQuantity()).sum();
+
         model.addAttribute("tabTitle", "Panier");
         model.addAttribute("cssName", "cart");
         model.addAttribute("cart", cart);
         model.addAttribute("lineOrder", new LineOrder());
         model.addAttribute("categoriesChosenInFrench", categoriesChosenInFrench);
-
+        model.addAttribute("totalPrice", totalPrice);
         return "integrated:cart";
     }
 
@@ -69,9 +70,7 @@ public class CartController {
                 lineOrder.setRealPrice(product.getPriceCatalog());
                 cart.put(idProduct, lineOrder);
             }
-            System.out.println("Produit : " + cart.get(idProduct).getProduct().getName());
-            System.out.println("Quantité : " + cart.get(idProduct).getQuantity());
-            System.out.println("taille hashmap : " + cart.size());
+            System.out.println(lineOrder.getRealPrice());
             return "redirect:/products/" + cart.get(idProduct).getProduct().getCategory().getId();
         }
         return "redirect:/detailsProduct/" + idProduct;
@@ -89,9 +88,8 @@ public class CartController {
             } else {
                 cart.remove(idProduct);
             }
-            return "redirect:/cart";
         }
-        return "redirect:/welcome";
+        return "redirect:/cart";
     }
 
     @RequestMapping(value="/delete/{idProduct}", method = RequestMethod.POST)

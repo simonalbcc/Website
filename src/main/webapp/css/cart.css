@@ -12,6 +12,12 @@
     background-color: white;
 }
 
+#buySection {
+    display: flex;
+    justify-content: space-between;
+
+}
+
 /* The Modal (background) */
 .addModal {
     display: none; /* Hidden by default */

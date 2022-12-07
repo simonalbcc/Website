@@ -62,11 +62,18 @@
             </div>
         </div>
     </c:forEach>
+    <c:choose>
+        <c:when test="${cart.isEmpty()}">
+            <p><spring:message code="cartEmpty"/></p>
+        </c:when>
+        <c:otherwise>
+            <div id="buySection">
+                <p>Total : ${totalPrice}</p>
+                <button class="btn btn-light"><spring:message code="buyButton"/></button>
+            </div>
+        </c:otherwise>
+    </c:choose>
 
-    <div>
-        <p>Total :</p>
-        <button><spring:message code="buyButton"/></button>
-    </div>
 
 </section>
 <script>

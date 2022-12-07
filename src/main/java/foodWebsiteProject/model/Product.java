@@ -7,12 +7,12 @@ public class Product {
     private Integer id;
     private String name;
     private String size;
-    private Float priceCatalog;
+    private Double priceCatalog;
     private String description;
     private Category category;
 
     public Product(){}
-    public Product(Integer id, String name, String size, Float priceCatalog, String description, Category category) {
+    public Product(Integer id, String name, String size, Double priceCatalog, String description, Category category) {
         this.id = id;
         this.name = name;
         this.size = size;
@@ -34,7 +34,7 @@ public class Product {
         return size;
     }
 
-    public Float getPriceCatalog() {
+    public Double getPriceCatalog() {
         return priceCatalog;
     }
 
@@ -60,7 +60,7 @@ public class Product {
         this.size = size;
     }
 
-    public void setPriceCatalog(Float priceCatalog) {
+    public void setPriceCatalog(Double priceCatalog) {
         this.priceCatalog = priceCatalog;
     }
 
