@@ -42,8 +42,15 @@ public class CartController {
                           @ModelAttribute(value= Constants.CURRENT_CART) HashMap<Integer, LineOrder> cart,
                           final BindingResult errors){
 
+<<<<<<< Updated upstream
         ArrayList<String> categoriesChosenInFrench = translationDAO.getAllCategoriesWithAnId(2).stream().map(t->t.getCategoryName()).collect(Collectors.toCollection(ArrayList :: new));
         Double totalPrice = cart.values().stream().mapToDouble(p -> p.getRealPrice() * p.getQuantity()).sum();
+=======
+        ArrayList<Integer> categoriesInCart = cart.values().stream().map(v -> v.getProduct().getCategory().getId()).collect(Collectors.toCollection(ArrayList :: new));
+        ArrayList<String> categoriesChosenInFrench = translationDAO.getAllCategoriesWithAnId(2).stream().filter(t -> categoriesInCart.contains(t.getCategory().getId())).map(t->t.getCategoryName()).collect(Collectors.toCollection(ArrayList :: new));
+
+        categoriesChosenInFrench.forEach(c -> System.out.println(c));
+>>>>>>> Stashed changes
 
         model.addAttribute("tabTitle", "Panier");
         model.addAttribute("cssName", "cart");
@@ -82,6 +89,10 @@ public class CartController {
                                  @PathVariable("idProduct") Integer idProduct,
                                  @ModelAttribute("lineOrder") LineOrder lineOrder,
                                  final BindingResult errors){
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
         if(!errors.hasErrors()){
             if(lineOrder.getQuantity() > 0){
                 cart.get(idProduct).setQuantity(lineOrder.getQuantity());
