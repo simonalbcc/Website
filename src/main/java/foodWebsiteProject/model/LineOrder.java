@@ -16,7 +16,7 @@ public class LineOrder {
 
     private Product product;
 
-    private User orderUser;
+    private Order orderUser;
 
     public LineOrder(){
 
@@ -39,7 +39,7 @@ public class LineOrder {
         return product;
     }
 
-    public User getOrderUser() {
+    public Order getOrderUser() {
         return orderUser;
     }
 
@@ -60,7 +60,7 @@ public class LineOrder {
         this.product = product;
     }
 
-    public void setOrderUser(User orderUser) {
+    public void setOrderUser(Order orderUser) {
         this.orderUser = orderUser;
     }
 }

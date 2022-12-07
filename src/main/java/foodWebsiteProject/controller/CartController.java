@@ -70,7 +70,6 @@ public class CartController {
                 lineOrder.setRealPrice(product.getPriceCatalog());
                 cart.put(idProduct, lineOrder);
             }
-            System.out.println(lineOrder.getRealPrice());
             return "redirect:/products/" + cart.get(idProduct).getProduct().getCategory().getId();
         }
         return "redirect:/detailsProduct/" + idProduct;
