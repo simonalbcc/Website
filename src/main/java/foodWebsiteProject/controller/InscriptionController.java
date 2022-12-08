@@ -41,6 +41,11 @@ public class InscriptionController {
         if(userDAO.isAlreadyCreated(user)) {
             errors.rejectValue("emailAddress","userEmail");
         }
+        System.out.println(user.getConfirmedPassword());
+        System.out.println(user.getPassword());
+        if(!user.getPassword().equals(user.getConfirmedPassword())){
+            errors.rejectValue("confirmedPassword", "confirmedPasswordNotMatch");
+        }
         if(!errors.hasErrors()){
             user.setFidelityCard(0);
             if(user.getNumberPhone().equals("")){

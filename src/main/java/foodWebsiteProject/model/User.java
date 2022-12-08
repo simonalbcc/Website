@@ -1,4 +1,6 @@
 package foodWebsiteProject.model;
+import javax.persistence.Transient;
+import javax.transaction.Transactional;
 import javax.validation.constraints.*;
 
 import org.springframework.security.core.GrantedAuthority;
@@ -9,7 +11,7 @@ import java.util.Collection;
 import java.util.List;
 
 
-public class User implements UserDetails{
+public class User implements UserDetails {
     @Size(max = 15)
     @Pattern(regexp = "[A-ZÀ-ÖØà-ÿa-z'-]{0,6}\\s[A-ZÀ-ÖØà-ÿa-z'-]{0,9}|[A-ZÀ-ÖØà-ÿa-z'-]{0,14}")
     @NotEmpty
@@ -37,8 +39,10 @@ public class User implements UserDetails{
     @Pattern(regexp = "\\+?\\d*")
     private String numberPhone;
 
-    private Integer fidelityCard;
+    @Transient
+    private String confirmedPassword;
 
+    private Integer fidelityCard;
     private Boolean enabled;
     private Boolean accountNonExpired;
     private Boolean accountNonLocked;
@@ -130,10 +134,17 @@ public class User implements UserDetails{
         return credentialsNonExpired;
     }
 
+    public String getConfirmedPassword() {
+        return confirmedPassword;
+    }
 
     //endregion
 
     //region setters
+
+    public void setConfirmedPassword(String confirmedPassword) {
+        this.confirmedPassword = confirmedPassword;
+    }
 
     public void setFirstName(String firstName) {
         this.firstName = firstName;
