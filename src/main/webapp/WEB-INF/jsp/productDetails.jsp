@@ -24,7 +24,7 @@
                         <h4 class="box-title mt-5">Description:</h4>
                         <p>${product.getDescription()}</p>
                         <!-- price -->
-                        <h2 class="mt-4">${product.getPriceCatalog()}€</h2>
+                        <h2 class="mt-4">${product.getPriceCatalog()} <spring:message code="currencySymbol"/> </h2>
                         <button id="addButton" class="btn btn-light btn-rounded"><spring:message code="addCartButton"/></button>
                     </div>
                 </div>
@@ -44,7 +44,7 @@
                 <form:label path="quantity"><spring:message code="quantitySelectLabel"/></form:label>
                 <form:input path="quantity" type="number" value="1" step="1" min="1"/>
                 <form:errors path="quantity"/>
-                <form:button id="confirmButton" class="btn btn-light"><spring:message code="add"/></form:button> <!-- ce bouton gère l'ajout au panier -->
+                <form:button id="confirmButton" class="btn btn-light"><spring:message code="add"/></form:button>
             </form:form>
         </div>
     </div>

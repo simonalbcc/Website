@@ -82,8 +82,8 @@
                                     <li><a class="dropdown-item" style="color:white" href='<spring:url value="/login"/>'><spring:message code="logInButton"/></a></li>
                                 </sec:authorize>
                                 <sec:authorize access="isAuthenticated()">
-                                    <li><a class="dropdown-item" style="color:white" href='<spring:url value="/logout"/>'><spring:message code="logOutButton"/></a></li>
                                     <li><a class="dropdown-item" style="color:white" href='<spring:url value="/editProfile"/>'><spring:message code="editProfileButton"/></a></li>
+                                    <li><a class="dropdown-item" style="color:white" href='<spring:url value="/logout"/>'><spring:message code="logOutButton"/></a></li>
                                 </sec:authorize>
                             </ul>
                         </li>

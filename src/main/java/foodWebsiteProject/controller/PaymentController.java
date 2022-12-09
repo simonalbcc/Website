@@ -6,7 +6,6 @@ import foodWebsiteProject.dataAccess.dao.*;
 import foodWebsiteProject.model.LineOrder;
 import foodWebsiteProject.model.Order;
 import foodWebsiteProject.model.User;
-import jdk.swing.interop.SwingInterOpUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
@@ -49,21 +48,16 @@ public class PaymentController {
         List<LineOrder> orderProductPrice = new ArrayList<>(cart.values());
         Collections.sort(orderProductPrice, Comparator.comparing(LineOrder::getRealPrice));
 
-
         int nbPoints = order.getUser().getFidelityCard();
         for(Map.Entry<Integer, LineOrder> product : cart.entrySet()){
             LineOrder lineOrder = product.getValue();
             lineOrder.setOrder(order);
             lineOrderDAO.save(lineOrder);
             nbPoints += lineOrder.getQuantity();
-            cart.remove(product.getKey());
         }
 
-        System.out.println("test" + cart);
-
-        int nbProduitsPromo = nbPoints / 11;
+        int nbProduitsPromo = nbPoints / 11; // constante
         double priceProm = 0;
-        System.out.println(nbProduitsPromo);
         for(int iProd = 0; iProd < nbProduitsPromo && nbProduitsPromo < orderProductPrice.size(); iProd++){
             priceProm += orderProductPrice.get(iProd).getRealPrice();
         }
@@ -71,6 +65,8 @@ public class PaymentController {
         nbPoints -= nbProduitsPromo * 10;
         order.getUser().setFidelityCard(nbPoints);
         userDAO.save(order.getUser());
+
+        cart.clear();
 
         model.addAttribute("tabTitle","Page de paiement");
         model.addAttribute("nbPoints",nbPoints);

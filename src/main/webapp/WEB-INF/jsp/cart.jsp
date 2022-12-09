@@ -28,7 +28,7 @@
                     </div>
                     <!-- price -->
                     <div class="col-md-1 col-lg-2 col-xl-2">
-                        <h5 class="mb-0"><spring:message code="price"/> : ${lineOrder.getValue().getQuantity() * lineOrder.getValue().getRealPrice()}€</h5>
+                        <h5 class="mb-0"><spring:message code="price"/> : ${lineOrder.getValue().getQuantity() * lineOrder.getValue().getRealPrice()} <spring:message code="currencySymbol"/> </h5>
                     </div>
 
                     <!-- quantity remover -->
