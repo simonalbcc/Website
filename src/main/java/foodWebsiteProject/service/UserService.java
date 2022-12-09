@@ -1,4 +1,4 @@
-package foodWebsiteProject.sevice;
+package foodWebsiteProject.service;
 
 import foodWebsiteProject.dataAccess.dao.UserDAO;
 import foodWebsiteProject.dataAccess.dao.UserDataAccess;

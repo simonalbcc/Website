@@ -3,5 +3,5 @@
 <%@ include file="include/importTags.jsp"%>
 
 <section>
-    <div>payment</div>
+    <div>points de fidélité : ${nbPoints} restants, promotions appliqué ${pricePromo}</div>
 </section>
