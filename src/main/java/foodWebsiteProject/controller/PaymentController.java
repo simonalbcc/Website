@@ -56,7 +56,7 @@ public class PaymentController {
             nbPoints += lineOrder.getQuantity();
         }
 
-        int nbProduitsPromo = nbPoints / 11; // constante
+        int nbProduitsPromo = nbPoints / 11; //TODO constante
         double priceProm = 0;
         for(int iProd = 0; iProd < nbProduitsPromo && nbProduitsPromo < orderProductPrice.size(); iProd++){
             priceProm += orderProductPrice.get(iProd).getRealPrice();
@@ -66,11 +66,12 @@ public class PaymentController {
         order.getUser().setFidelityCard(nbPoints);
         userDAO.save(order.getUser());
 
-        cart.clear();
-
         model.addAttribute("tabTitle","Page de paiement");
+        model.addAttribute("cssName", "payment");
         model.addAttribute("nbPoints",nbPoints);
         model.addAttribute("priceProm", priceProm);
+        model.addAttribute("cart", cart);
+        model.addAttribute("user", userDAO);
 
         return "integrated:payment";
     }
