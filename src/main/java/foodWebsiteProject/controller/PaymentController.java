@@ -73,6 +73,7 @@ public class PaymentController {
         model.addAttribute("cart", cart);
         model.addAttribute("user", userDAO);
 
+
         return "integrated:payment";
     }
 

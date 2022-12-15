@@ -1,20 +1,8 @@
 
 body {
-    background-color: #fae3ea;
-    background-color: var(--color-background);
     font-family: Poppin, sans-serif;
-    font-family: var(--font-family-base);
     line-height: 1.5;
     margin: 0;
-
-}
-
-button {
-    border: 0;
-    color: inherit;
-    cursor: pointer;
-    font: inherit;
-    width: 2%;
 }
 
 fieldset {
@@ -25,7 +13,6 @@ fieldset {
 
 h1 {
     font-size: 1.25rem;
-    font-size: var(--font-size-h1);
     line-height: 1.2;
     margin-top: 0;
     margin-bottom: 1.5em;
@@ -33,7 +20,6 @@ h1 {
 
 h2 {
     font-size: 1rem;
-    font-size: var(--font-size-h2);
     line-height: 1.2;
     margin-top: 0;
     margin-bottom: 0.5em;
@@ -43,12 +29,6 @@ legend {
     font-weight: 600;
     margin-bottom: 0.5em;
     padding: 0;
-}
-
-input {
-    border: 0;
-    color: inherit;
-    font: inherit;
 }
 
 p {
@@ -69,6 +49,10 @@ td {
     padding-bottom: 0.125em;
 }
 
+tr td~td {
+    float: right;
+}
+
 tfoot {
     border-top: 1px solid #b4b4b4;
     font-weight: 600;
@@ -84,87 +68,37 @@ tfoot {
 
 }
 
-.button {
+#button {
     background-color:orange;
     border-radius: 999em;
     color: #fff;
+    scale: 50%;
     display: -webkit-box;
     display: -ms-flexbox;
-    display: flex;
     padding-top: 0.75em;
-    padding-bottom: 0.75em;
     padding-left: 1em;
     padding-right: 1em;
     -webkit-transition: 0.3s;
     -o-transition: 0.3s;
     transition: 0.3s;
+    cursor: pointer;
+    float: right;
 }
 
-.button:focus,
-.button:hover {
+#button:focus,
+#button:hover {
     background-color: white;
     color: orange;
     border: 1px solid orange;
 }
 
-.button--full {
-    width: 20%;
-}
-
-#button-container{
-    display: flex;
-    justify-content: flex-end;
-}
-
 .card {
     border-radius: 1em;
-    background-color: #fc8080;
-    background-color: var(--color-primary);
     color: #fff;
     padding: 1em;
 }
 
-.form {
-    display: grid;
-    grid-gap: 2em;
-    gap: 2em;
-}
-
-.form__radios {
-    display: grid;
-    grid-gap: 1em;
-    gap: 1em;
-}
-
-.form__radio {
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    background-color: #fefdfe;
-    border-radius: 1em;
-    -webkit-box-shadow: 0 0 1em rgba(0, 0, 0, 0.0625);
-    box-shadow: 0 0 1em rgba(0, 0, 0, 0.0625);
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    padding: 1em;
-}
-
-.form__radio label {
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-flex: 1;
-    -ms-flex: 1;
-    flex: 1;
-    grid-gap: 1em;
-    gap: 1em;
-}
-
-.header {
+header{
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -175,6 +109,10 @@ tfoot {
     padding-bottom: 0.5em;
     padding-left: 1em;
     padding-right: 1em;
+}
+
+.paymentsMethods{
+    margin-bottom: 1em;
 }
 
 .icon {

@@ -2,78 +2,69 @@
 <%@ page pageEncoding="UTF-8" contentType="text/html; charset=UTF-8"%>
 <%@ include file="include/importTags.jsp"%>
 
+<c:set scope="page" var="total" value="${Math.round(cart.values().stream().map(value -> value.getQuantity() * value.getProduct().getPriceCatalog()).reduce(0, (a, b) -> a + b) * 100.) / 100.}" />
+
+
 <section>
-        <header class="header">
+
+        <header>
             <h1><spring:message code="checkout"/></h1>
         </header>
 
-        <form action="https://httpbin.org/post" class="form" method="POST">
-            <div>
-                <h2><spring:message code="informations"/></h2>
+        <div>
+            <h2><spring:message code="informations"/></h2>
 
-                <div class="card">
-                    <p> ${pageContext.request.userPrincipal.principal.firstName + " " + pageContext.request.userPrincipal.principal.lastName} </p>
-                </div>
+            <div class="card">
+                <!-- mettre les infos de l'utilisateur -> pb avec pageContext.request.userPrincipal.principal.lastName -->
             </div>
+        </div>
 
-            <fieldset>
-                <legend><spring:message code="paymentMethod"/></legend>
-
-                    <div class="form__radio">
-                        <label for="paypal"><svg class="icon">
-                            <use xlink:href="#icon-paypal" />
-                        </svg>PayPal</label>
-                        <input id="paypal" name="payment-method" type="radio" />
-                    </div>
-            </fieldset>
-
-            <div>
-                <h2><spring:message code="shoppingBill"/></h2>
-
-                <table>
-                    <tbody>
-                    <tr>
-                        <td><spring:message code="discount"/></td>
-                        <td>-1.89<spring:message code="currencySymbol"/></td>
-                    </tr>
-                    <tr>
-                        <td><spring:message code="totalPrice"/></td>
-                        <td>84.82<spring:message code="currencySymbol"/></td>
-                    </tr>
-                    </tbody>
-                    <tfoot>
-                    <tr>
-                        <td><spring:message code="total"/></td>
-                        <td>88.36<spring:message code="currencySymbol"/></td>
-                    </tr>
-                    </tfoot>
-                </table>
-            </div>
-
-            <div id = "button-container">
-                <button class="button button--full" type="submit">
+        <fieldset>
+            <legend><spring:message code="paymentMethod"/></legend>
+                <label class="paymentsMethods">
                     <svg class="icon">
-                        <use xlink:href="#icon-shopping-bag" />
-                    </svg>
-                    <form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
-                        <input hidden name="business" value="-@gmail.com"/>
-                        <input hidden name="cert_id" value="-" />
-                        <input hidden name="cmd" value="_xclick" />
-                        <input hidden name="amount" value="" /> <!-- Need to check if .2f// -->
-                        <input hidden name="item_name" value="<spring:message code='' />" />
-                        <input hidden name="lc" value="fr_BE" />
-                        <input hidden name="currency_code" value="EUR" />
-                        <input hidden name="return" value="http://localhost:8082/order/success" />
-                        <input hidden name="cancel_return" value="http://localhost:8082/cart" />
-                        <input id="button" type="image" style="margin: auto" src="<spring:url value='/images/paypal_logo.png' />" />
-                    </form>
-                    <spring:message code="buyNow"/>
-                </button>
-            </div>
-        </form>
+                        <use xlink:href="#icon-paypal" />
+                    </svg>PayPal
+                </label>
+        </fieldset>
 
+        <div>
+            <h2><spring:message code="shoppingBill"/></h2>
+            <table>
+                <tbody>
+                <tr>
+                    <td><spring:message code="discount"/></td>
+                    <td>-${total}<spring:message code="currencySymbol"/></td>
+                </tr>
+                <tr>
+                    <td><spring:message code="totalPrice"/></td>
+                    <td>${total}<spring:message code="currencySymbol"/></td>
+                </tr>
+                </tbody>
+                <tfoot>
+                <tr>
+                    <td><spring:message code="total"/></td>
+                    <td>${total}<spring:message code="currencySymbol"/></td>
+                </tr>
+                </tfoot>
+            </table>
+        </div>
 
-    <svg xmlns="http://www.w3.org/2000/svg" style="display: none">
+        <div id = "button-container">
+            <form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
+                <input hidden name="business" value="fabriceLeGiletJaune@business.example.com"/>
+                <input hidden name="cert_id" value="emilienAssiette@personal.example.com" />
+                <input hidden name="cmd" value="_xclick" />
+                <input hidden name="amount" value="${total}" />
+                <input hidden name="lc" value="fr_BE" />
+                <input hidden name="currency_code" value="EUR" />
+                <input hidden name="return" value="http://localhost:8082/foodWebsite/welcome" />
+                <input hidden name="cancel_return" value="http://localhost:8082/foodWebsite/menu" />
+                <input id="button" type="image" style="margin: auto" onclick="" src="<spring:url value='/images/paypal_logo.png' />" />
+            </form>
+        </div>
+
+        <svg xmlns="http://www.w3.org/2000/svg" style="display: none">
         <symbol id="icon-shopping-bag" viewBox="0 0 24 24">
             <path d="M20 7h-4v-3c0-2.209-1.791-4-4-4s-4 1.791-4 4v3h-4l-2 17h20l-2-17zm-11-3c0-1.654 1.346-3 3-3s3 1.346 3 3v3h-6v-3zm-4.751 18l1.529-13h2.222v1.5c0 .276.224.5.5.5s.5-.224.5-.5v-1.5h6v1.5c0 .276.224.5.5.5s.5-.224.5-.5v-1.5h2.222l1.529 13h-15.502z" />
         </symbol>
@@ -102,4 +93,5 @@
             </g>
         </symbol>
     </svg>
+
 </section>
