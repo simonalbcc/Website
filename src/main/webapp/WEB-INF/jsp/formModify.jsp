@@ -32,7 +32,7 @@
             <!-- password field -->
             <div class="col-md-6">
                 <form:label path="password" class="form-label"><spring:message code="passwordFormLabel"/></form:label>
-                <form:input type="password" class="form-control" path="password" value="${user.getPassword()}"/>
+                <form:password  class="form-control" path="password" autocomplete="false" />
                 <form:errors path="password"/>
             </div>
 
@@ -46,7 +46,7 @@
             <!-- confirmedPassword field -->
             <div class="col-md-6">
                 <form:label path="confirmedPassword" class="form-label"><spring:message code="confirmedPassword"/></form:label>
-                <form:input type="password" class="form-control" path="confirmedPassword" value="${user.getPassword()}"/>
+                <form:password  class="form-control" path="confirmedPassword" autocomplete="false" />
                 <form:errors path="confirmedPassword"/>
             </div>
 
