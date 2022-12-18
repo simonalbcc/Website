@@ -35,7 +35,7 @@ footer{
 /* footer space */
 #spacer {
     flex: 1;
-    padding-top: 15%;
+    padding-top: 100%;
 }
 
 /* footer subtitle */
@@ -48,7 +48,6 @@ footer{
 
 /* footer properties text */
 .footer-content p{
-    max-width: 500px;
     margin: 10px auto;
     line-height: 28px;
     font-size: 14px;
@@ -72,9 +71,7 @@ footer{
     color: #fff;
     border: 1.1px solid white;
     padding: 5px;
-
     border-radius: 50%;
-
 }
 /* footer properties each logo social network */
 .socials a i{
@@ -88,11 +85,8 @@ footer{
     color: orange;
 }
 
-
-
 /* main properties navigation bar */
 nav{
-    height: 150px;
     display: flex;
     padding: 2% 6%;
     justify-content: space-between;
@@ -100,12 +94,43 @@ nav{
     background-color: orange;
 }
 /* name */
+@media screen and (max-width: 768px){
+    #top-container h1 {
+        font-size: 30px;
+    }
+    .nav-links ul li a,.nav-links ul li button{
+        font-size: 18px;
+    }
+    nav, footer, footer > *{
+        height: 150px;
+        width: 100%;
+    }
+    #top-container img{
+        width: 100px;
+    }
+}
+@media screen and (min-width: 768px){
+    #top-container h1 {
+        font-size: 40px;
+    }
+    .nav-links ul li a,.nav-links ul li button{
+        font-size: 24px;
+    }
+    nav, footer, footer > *{
+        height: 150px;
+        width: 100%;
+    }
+    #top-container img{
+        width: 100px;
+    }
+}
+
+
 #top-container h1 {
     position: relative;
     margin: 0;
     font-family: "Raleway", sans-serif;
     font-weight: 600;
-    font-size: 40px;
     color: white;
     text-transform: uppercase;
     padding-bottom: 5px;
@@ -122,8 +147,10 @@ nav{
 }
 
 /* navigation bar items */
+
 .nav-links ul li{
     list-style-type: none;
+    padding: 8px 12px;
     display: inline-block; 
     padding: 8px 12px;
     position: relative;
@@ -133,7 +160,6 @@ nav{
 .nav-links ul li a,.nav-links ul li button {
     color: white;
     text-decoration: none;
-    font-size: 24px;
 }
 
 /* underline nav bar items */

@@ -5,7 +5,9 @@
 <section>
     <div id = "middle-container">
         <div id="contact-text">
-            <spring:message code ="contactText"/>
+            <p><spring:message code ="contactText"/></p>
+            <p><spring:message code ="mail"/></p>
+            <p><spring:message code ="phoneNumber"/></p>
         </div>
         <a class="btn btn-light" href='<spring:url value="/welcome"/>'><spring:message code ="backButton"/></a>
     </div>

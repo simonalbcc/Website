@@ -5,6 +5,8 @@
 <!-- ========================= SECTION HEAD ========================= -->
 <head>
     <meta charset="UTF-8">
+    <!-- This gives the browser instructions on how to control the page's dimensions and scaling. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Custom fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

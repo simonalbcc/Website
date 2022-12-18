@@ -69,8 +69,6 @@ public class PaymentController {
         model.addAttribute("cart", cart);
         model.addAttribute("total",cart.values().stream().mapToDouble(p -> p.getRealPrice() * p.getQuantity()).sum());
 
-
-
         return "integrated:payment";
     }
 

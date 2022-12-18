@@ -14,13 +14,13 @@
                     modelAttribute="user">
 
                 <!-- email field -->
-                <div class="col-md-8">
+                <div class="col-md-10">
                     <form:label path="emailAddress" class="form-label"><spring:message code="emailFormLabel"/></form:label>
                     <form:input type="email" class="form-control" path="emailAddress"/>
                 </div>
 
                 <!-- password field -->
-                <div class="col-md-8">
+                <div class="col-md-10">
                     <form:label path="password" class="form-label"><spring:message code="passwordFormLabel"/></form:label>
                     <form:input type="password" class="form-control" path="password"/>
                 </div>

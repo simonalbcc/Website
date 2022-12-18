@@ -68,7 +68,7 @@
         </c:when>
         <c:otherwise>
             <div id="buySection">
-                <p>Total : ${totalPrice}</p>
+                <p><u>Total: </u>  ${totalPrice} <spring:message code="currencySymbol"/> </p>
                 <a class="btn btn-light" href='<spring:url value="/payment"/>'><spring:message code="buyButton"/></a>
             </div>
         </c:otherwise>
