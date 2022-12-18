@@ -94,7 +94,7 @@
             <!-- personnalized message -->
             <sec:authorize access="isAuthenticated()">
                 <div id ="userBanner">
-                    <p><spring:message code="welcomeMessage"/> ${pageContext.request.userPrincipal.principal.firstName} </p>
+                    <p><spring:message code="welcomeMessage"/> ${pageContext.request.userPrincipal.principal.firstName} - ${pageContext.request.userPrincipal.principal.fidelityCard} <spring:message code="fidelityMessage"/></p>
                 </div>
             </sec:authorize>
 

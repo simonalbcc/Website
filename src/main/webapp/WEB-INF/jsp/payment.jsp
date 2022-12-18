@@ -2,22 +2,11 @@
 <%@ page pageEncoding="UTF-8" contentType="text/html; charset=UTF-8"%>
 <%@ include file="include/importTags.jsp"%>
 
-<c:set scope="page" var="total" value="${Math.round(cart.values().stream().map(value -> value.getQuantity() * value.getProduct().getPriceCatalog()).reduce(0, (a, b) -> a + b) * 100.) / 100.}" />
-
-
 <section>
 
         <header>
             <h1><spring:message code="checkout"/></h1>
         </header>
-
-        <div>
-            <h2><spring:message code="informations"/></h2>
-
-            <div class="card">
-                <!-- mettre les infos de l'utilisateur -> pb avec pageContext.request.userPrincipal.principal.lastName -->
-            </div>
-        </div>
 
         <fieldset>
             <legend><spring:message code="paymentMethod"/></legend>
@@ -33,18 +22,18 @@
             <table>
                 <tbody>
                 <tr>
-                    <td><spring:message code="discount"/></td>
-                    <td>-${total}<spring:message code="currencySymbol"/></td>
-                </tr>
-                <tr>
                     <td><spring:message code="totalPrice"/></td>
                     <td>${total}<spring:message code="currencySymbol"/></td>
+                </tr>
+                <tr>
+                    <td><spring:message code="discount"/></td>
+                    <td>-${priceProm}<spring:message code="currencySymbol"/></td>
                 </tr>
                 </tbody>
                 <tfoot>
                 <tr>
                     <td><spring:message code="total"/></td>
-                    <td>${total}<spring:message code="currencySymbol"/></td>
+                    <td>${total - priceProm}<spring:message code="currencySymbol"/></td>
                 </tr>
                 </tfoot>
             </table>

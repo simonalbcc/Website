@@ -6,6 +6,7 @@ import foodWebsiteProject.dataAccess.dao.*;
 import foodWebsiteProject.model.LineOrder;
 import foodWebsiteProject.model.Order;
 import foodWebsiteProject.model.User;
+import foodWebsiteProject.service.CartService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
@@ -56,22 +57,18 @@ public class PaymentController {
             nbPoints += lineOrder.getQuantity();
         }
 
-        int nbProduitsPromo = nbPoints / 11; //TODO constante
-        double priceProm = 0;
-        for(int iProd = 0; iProd < nbProduitsPromo && nbProduitsPromo < orderProductPrice.size(); iProd++){
-            priceProm += orderProductPrice.get(iProd).getRealPrice();
-        }
+        double[] results = CartService.nbPointsAndPriceProm(nbPoints, orderProductPrice);
 
-        nbPoints -= nbProduitsPromo * 10;
-        order.getUser().setFidelityCard(nbPoints);
+        order.getUser().setFidelityCard((int)results[0]);
         userDAO.save(order.getUser());
 
         model.addAttribute("tabTitle","Page de paiement");
         model.addAttribute("cssName", "payment");
-        model.addAttribute("nbPoints",nbPoints);
-        model.addAttribute("priceProm", priceProm);
+        model.addAttribute("nbPoints",results[0]);
+        model.addAttribute("priceProm", results[1]);
         model.addAttribute("cart", cart);
-        model.addAttribute("user", userDAO);
+        model.addAttribute("total",cart.values().stream().mapToDouble(p -> p.getRealPrice() * p.getQuantity()).sum());
+
 
 
         return "integrated:payment";
