@@ -6,7 +6,6 @@ import foodWebsiteProject.dataAccess.dao.ProductDataAccess;
 import foodWebsiteProject.dataAccess.dao.TranslationDAO;
 import foodWebsiteProject.dataAccess.dao.TranslationDataAccess;
 import foodWebsiteProject.model.LineOrder;
-import foodWebsiteProject.model.Order;
 import foodWebsiteProject.model.Product;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -44,7 +43,7 @@ public class CartController {
         ArrayList<String> categoriesChosenInFrench = translationDAO.getAllCategoriesWithAnId(2).stream().map(t->t.getCategoryName()).collect(Collectors.toCollection(ArrayList :: new));
         Double totalPrice = cart.values().stream().mapToDouble(p -> p.getRealPrice() * p.getQuantity()).sum();
 
-        model.addAttribute("tabTitle", "Panier");
+        model.addAttribute("tabTitle", "Card");
         model.addAttribute("cssName", "cart");
         model.addAttribute("cart", cart);
         model.addAttribute("lineOrder", new LineOrder());

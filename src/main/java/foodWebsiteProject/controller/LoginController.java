@@ -15,7 +15,7 @@ public class LoginController {
     public String connection(Model model){
 
         model.addAttribute("user", new User());
-        model.addAttribute("tabTitle", "Connexion");
+        model.addAttribute("tabTitle", "Login");
         model.addAttribute("cssName", "form");
 
         return "integrated:formLogin";

@@ -29,7 +29,7 @@ public class InscriptionController {
     public String getInscriptionPage(Model model){
 
         model.addAttribute("user", new User());
-        model.addAttribute("tabTitle", "Inscription");
+        model.addAttribute("tabTitle", "Sign in");
         model.addAttribute("cssName", "form");
 
         return "integrated:formInscription";

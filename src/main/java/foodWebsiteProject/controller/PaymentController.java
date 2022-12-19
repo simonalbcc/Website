@@ -62,7 +62,7 @@ public class PaymentController {
         order.getUser().setFidelityCard((int)results[0]);
         userDAO.save(order.getUser());
 
-        model.addAttribute("tabTitle","Page de paiement");
+        model.addAttribute("tabTitle","Payment page");
         model.addAttribute("cssName", "payment");
         model.addAttribute("nbPoints",results[0]);
         model.addAttribute("priceProm", results[1]);
