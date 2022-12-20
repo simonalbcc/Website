@@ -31,7 +31,14 @@ public class ProductDAO implements ProductDataAccess{
     }
 
     public Product getProductById(Integer id){
-        return productConverter.productEntityToProductModel(productRepository.findProductEntityById(id));
+        ProductEntity productEntity = productRepository.findProductEntityById(id);
+        return convertProduct(productEntity);
+    }
+
+    private Product convertProduct (ProductEntity productEntity){
+        Product product = productConverter.productEntityToProductModel(productEntity);
+        product.setCategory(productConverter.categoryEntityToCategoryModel(productEntity.getCategory()));
+        return product;
     }
 
 }

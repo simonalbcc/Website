@@ -16,7 +16,7 @@ public class ProductEntity {
     private String size;
 
     @Column(name="price_catalog")
-    private Float priceCatalog;
+    private Double priceCatalog;
 
     @Column(name = "description")
     private String description;
@@ -29,6 +29,15 @@ public class ProductEntity {
 
     public ProductEntity(Integer id){
         this.id = id;
+    }
+
+    public ProductEntity(Integer id, String name, String size, Double priceCatalog, String description, CategoryEntity category) {
+        this.id = id;
+        this.name = name;
+        this.size = size;
+        this.priceCatalog = priceCatalog;
+        this.description = description;
+        this.category = category;
     }
 
     //region getter
@@ -44,7 +53,7 @@ public class ProductEntity {
         return size;
     }
 
-    public Float getPriceCatalog() {
+    public Double getPriceCatalog() {
         return priceCatalog;
     }
 
@@ -70,7 +79,7 @@ public class ProductEntity {
         this.size = size;
     }
 
-    public void setPriceCatalog(Float priceCatalog) {
+    public void setPriceCatalog(Double priceCatalog) {
         this.priceCatalog = priceCatalog;
     }
 

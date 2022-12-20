@@ -1,10 +1,11 @@
 package foodWebsiteProject.testMockito;
 
-
 import foodWebsiteProject.dataAccess.dao.ProductDAO;
+import foodWebsiteProject.dataAccess.entity.CategoryEntity;
 import foodWebsiteProject.dataAccess.entity.ProductEntity;
 import foodWebsiteProject.dataAccess.repository.ProductRepository;
 import foodWebsiteProject.dataAccess.util.ProviderConverter;
+import foodWebsiteProject.model.Category;
 import foodWebsiteProject.model.Product;
 import org.junit.Before;
 import org.junit.Test;
@@ -25,22 +26,16 @@ public class ProductTest {
     @Mock
     private ProductRepository productRepository;
 
-    @Mock
-    private ProviderConverter providerConverter;
-
     @Before
-    public void setUp() throws Exception{
-        productDAO = new ProductDAO(productRepository,providerConverter);
+    public void setUp(){
+        productDAO = new ProductDAO(productRepository,new ProviderConverter());
     }
 
     @Test
-    public void testProductTest(){
-        ProductEntity productEntityMocked = new ProductEntity(1);
-
+    public void getProductById(){
+        ProductEntity productEntityMocked = new ProductEntity(1, "Dagobert", "L", 4.5, "Jambon, mayonnaise, gouda, tomate, salade, oeuf", new CategoryEntity(2));
         when(productRepository.findProductEntityById(1)).thenReturn(productEntityMocked);
-
-        Product result = new Product(1);
-
-        assertThat(productDAO.getProductById(1)).isEqualTo(result);
+        Product product = new Product(1, "Dagobert", "L", 4.5, "Jambon, mayonnaise, gouda, tomate, salade, oeuf", new Category(2));
+        assertThat(productDAO.getProductById(1)).isEqualTo(product);
     }
 }
