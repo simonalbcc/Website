@@ -1,8 +1,5 @@
 package foodWebsiteProject.model;
 
-import javax.persistence.Column;
-import javax.persistence.Id;
-
 public class Product {
     private Integer id;
     private String name;
@@ -77,4 +74,15 @@ public class Product {
     }
     //endregion
 
+    @Override
+    public String toString() {
+        return "Product{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", size='" + size + '\'' +
+                ", priceCatalog=" + priceCatalog +
+                ", description='" + description + '\'' +
+                ", category=" + category +
+                '}';
+    }
 }

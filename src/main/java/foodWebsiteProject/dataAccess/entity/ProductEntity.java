@@ -91,4 +91,17 @@ public class ProductEntity {
         this.category = category;
     }
     //endregion
+
+
+    @Override
+    public String toString() {
+        return "ProductEntity{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", size='" + size + '\'' +
+                ", priceCatalog=" + priceCatalog +
+                ", description='" + description + '\'' +
+                ", category=" + category +
+                '}';
+    }
 }
