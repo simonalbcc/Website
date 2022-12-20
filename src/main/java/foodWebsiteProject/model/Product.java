@@ -21,6 +21,10 @@ public class Product {
         this.category = category;
     }
 
+    public Product(Integer id){
+        this.id = id;
+    }
+
     //region getter
     public Integer getId() {
         return id;

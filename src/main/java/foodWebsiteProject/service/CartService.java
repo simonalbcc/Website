@@ -3,10 +3,11 @@ package foodWebsiteProject.service;
 
 import foodWebsiteProject.Constants;
 import foodWebsiteProject.model.LineOrder;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-
+@Service
 public class CartService {
 
 

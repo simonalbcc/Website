@@ -6,5 +6,5 @@ import java.util.ArrayList;
 
 public interface ProductDataAccess  {
     public ArrayList<Product> getAllProductsByCategoryId(Integer categoryId);
-    public Product getProductById(Integer categoryId);
+    public Product getProductById(Integer id);
 }

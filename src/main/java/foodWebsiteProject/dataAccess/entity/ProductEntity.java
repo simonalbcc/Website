@@ -27,6 +27,10 @@ public class ProductEntity {
 
     public ProductEntity() {}
 
+    public ProductEntity(Integer id){
+        this.id = id;
+    }
+
     //region getter
     public Integer getId() {
         return id;

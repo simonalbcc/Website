@@ -14,6 +14,10 @@ public class CategoryEntity {
 
     public CategoryEntity() {}
 
+    public CategoryEntity(Integer id){
+        this.id = id;
+    }
+
     public Integer getId() {
         return id;
     }

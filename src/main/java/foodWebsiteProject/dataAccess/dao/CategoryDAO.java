@@ -25,6 +25,7 @@ public class CategoryDAO implements CategoryDataAccess {
         return categoryRepository.findAll()
                 .stream().map(categoryEntity -> categoryConverter.categoryEntityToCategoryModel(categoryEntity))
                 .collect(Collectors.toCollection(ArrayList :: new));
+
     }
 
 }

@@ -5,8 +5,6 @@ import foodWebsiteProject.model.*;
 import org.dozer.DozerBeanMapper;
 import org.springframework.stereotype.Component;
 
-import javax.sound.sampled.Line;
-import java.util.Optional;
 
 @Component
 public class ProviderConverter {
@@ -59,7 +57,6 @@ public class ProviderConverter {
     }
 
     public Translation translationEntityToTranslationModel(TranslationEntity translationEntity){
-
         return mapper.map(translationEntity, Translation.class);
     }
 

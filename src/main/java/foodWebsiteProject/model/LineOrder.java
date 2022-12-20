@@ -22,6 +22,11 @@ public class LineOrder {
 
     }
 
+    public LineOrder(Double realPrice, Integer quantity){
+        this.realPrice = realPrice;
+        this.quantity = quantity;
+    }
+
     // getters
     public Integer getIdLine() {
         return idLine;
