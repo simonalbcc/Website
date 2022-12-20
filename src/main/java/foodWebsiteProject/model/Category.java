@@ -16,4 +16,11 @@ public class Category {
     public void setId(Integer id) {
         this.id = id;
     }
+
+    @Override
+    public String toString() {
+        return "Category{" +
+                "id=" + id +
+                '}';
+    }
 }
