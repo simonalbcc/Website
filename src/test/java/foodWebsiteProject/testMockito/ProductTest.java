@@ -7,6 +7,7 @@ import foodWebsiteProject.dataAccess.repository.ProductRepository;
 import foodWebsiteProject.dataAccess.util.ProviderConverter;
 import foodWebsiteProject.model.Category;
 import foodWebsiteProject.model.Product;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -36,7 +37,6 @@ public class ProductTest {
         ProductEntity productEntityMocked = new ProductEntity(1, "Dagobert", "L", 4.5, "Jambon, mayonnaise, gouda, tomate, salade, oeuf", new CategoryEntity(2));
         when(productRepository.findProductEntityById(1)).thenReturn(productEntityMocked);
         Product product = new Product(1, "Dagobert", "L", 4.5, "Jambon, mayonnaise, gouda, tomate, salade, oeuf", new Category(2));
-
-        assertThat(productDAO.getProductById(1)).isEqualTo(product);
+        assertThat(productDAO.getProductById(1)).usingRecursiveComparison().isEqualTo(product);
     }
 }
