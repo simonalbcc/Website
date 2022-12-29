@@ -46,9 +46,9 @@
                 <input hidden name="amount" value="${total}" />
                 <input hidden name="lc" value="fr_BE" />
                 <input hidden name="currency_code" value="EUR" />
-                <input hidden name="return" value="http://localhost:8082/foodWebsite/welcome"/>
-                <input hidden name="cancel_return" value="http://localhost:8082/foodWebsite/menu" />
-                <input id="button" type="image" style="margin: auto" onclick=${cart.clear()} src="<spring:url value='/images/paypal_logo.png' />" />
+                <input hidden name="return" value="http://localhost:8082/foodWebsite/payment/successful"/>
+                <input hidden name="cancel_return" value="http://localhost:8082/foodWebsite/payment/canceled" />
+                <input id="button" type="image" style="margin: auto" src="<spring:url value='/images/paypal_logo.png' />" />
             </form>
         </div>
 

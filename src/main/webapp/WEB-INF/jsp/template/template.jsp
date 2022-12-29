@@ -120,6 +120,7 @@
                     <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
                     <li><a href="#"><i class="fa fa-youtube"></i></a></li>
                     <li><a href="#"><i class="fa fa-linkedin-square"></i></a></li>
+                    <a id = "contactUs" href='<spring:url value="/contact"/>'><spring:message code="aboutUsButton"/></a>
                 </ul>
             </div>
         </footer>

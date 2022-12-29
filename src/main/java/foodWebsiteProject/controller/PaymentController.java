@@ -35,8 +35,7 @@ public class PaymentController {
     }
 
     @RequestMapping(method = RequestMethod.GET)
-    public String getPaymentPage (Model model,
-                                  @ModelAttribute(value = Constants.CURRENT_CART)HashMap<Integer, LineOrder> cart){
+    public String getPaymentPage (Model model, @ModelAttribute(value = Constants.CURRENT_CART)HashMap<Integer, LineOrder> cart){
 
         Order order = new Order();
         order.setDate(new Date());
@@ -66,10 +65,22 @@ public class PaymentController {
         model.addAttribute("cssName", "payment");
         model.addAttribute("nbPoints",results[0]);
         model.addAttribute("priceProm", results[1]);
-        model.addAttribute("cart", cart);
         model.addAttribute("total",cart.values().stream().mapToDouble(p -> p.getRealPrice() * p.getQuantity()).sum());
 
         return "integrated:payment";
+    }
+
+    @RequestMapping(method = RequestMethod.GET, value = "/successful")
+    public String paymentSuccessful(Model model, @ModelAttribute(value = Constants.CURRENT_CART)HashMap<Integer, LineOrder> cart){
+        cart.clear();
+    
+        return "redirect:/welcome";
+    }
+
+    @RequestMapping(method = RequestMethod.GET, value = "/canceled")
+    public String paymentCanceled(Model model, @ModelAttribute(value = Constants.CURRENT_CART)HashMap<Integer, LineOrder> cart){
+
+        return "redirect:/menu";
     }
 
 }

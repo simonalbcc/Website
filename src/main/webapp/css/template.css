@@ -35,7 +35,7 @@ footer{
 /* footer space */
 #spacer {
     flex: 1;
-    padding-top: 100%;
+    padding-top: 1%;
 }
 
 /* footer subtitle */
@@ -217,4 +217,8 @@ nav{
 /* change bootstraps properties  */
 a.dropdown-item, a.dropdown-item:hover{
     background-color: orange;
+}
+
+#contactUs{
+
 }
