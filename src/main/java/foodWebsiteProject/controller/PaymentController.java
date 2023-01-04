@@ -25,19 +25,19 @@ public class PaymentController {
 
     private OrderDataAccess orderDAO;
     private LineOrderDataAccess lineOrderDAO;
-
+    private Order order;
     private UserDataAccess userDAO;
     @Autowired
     public PaymentController(OrderDAO orderDAO, LineOrderDAO lineOrderDAO, UserDAO userDAO){
         this.lineOrderDAO = lineOrderDAO;
         this.orderDAO = orderDAO;
         this.userDAO = userDAO;
+        this.order = new Order();
     }
 
     @RequestMapping(method = RequestMethod.GET)
     public String getPaymentPage (Model model, @ModelAttribute(value = Constants.CURRENT_CART)HashMap<Integer, LineOrder> cart){
 
-        Order order = new Order();
         order.setDate(new Date());
         order.setPaid(false);
         order.setUser((User)SecurityContextHolder.getContext().getAuthentication().getPrincipal());
@@ -72,8 +72,9 @@ public class PaymentController {
 
     @RequestMapping(method = RequestMethod.GET, value = "/successful")
     public String paymentSuccessful(Model model, @ModelAttribute(value = Constants.CURRENT_CART)HashMap<Integer, LineOrder> cart){
+        order.setPaid(true);
+        orderDAO.save(order);
         cart.clear();
-    
         return "redirect:/welcome";
     }
 
