@@ -26,10 +26,4 @@ public class CategoryEntity {
         this.id = id;
     }
 
-    @Override
-    public String toString() {
-        return "CategoryEntity{" +
-                "id=" + id +
-                '}';
-    }
 }

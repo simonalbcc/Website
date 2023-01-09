@@ -74,15 +74,4 @@ public class Product {
     }
     //endregion
 
-    @Override
-    public String toString() {
-        return "Product{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", size='" + size + '\'' +
-                ", priceCatalog=" + priceCatalog +
-                ", description='" + description + '\'' +
-                ", category=" + category +
-                '}';
-    }
 }

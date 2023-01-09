@@ -92,16 +92,4 @@ public class ProductEntity {
     }
     //endregion
 
-
-    @Override
-    public String toString() {
-        return "ProductEntity{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", size='" + size + '\'' +
-                ", priceCatalog=" + priceCatalog +
-                ", description='" + description + '\'' +
-                ", category=" + category +
-                '}';
-    }
 }
